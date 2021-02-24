@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Story_seen_users_Activity"
+
+    >
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/fifty_Dimen"
+        android:layout_height="@dimen/eighty_Dimen"
+        android:src="@drawable/logo_2_yari"
+        android:layout_marginTop="@dimen/ten_negative_Dimen"
+        android:layout_marginStart="@dimen/five_Dimen"
+        />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:paddingStart="@dimen/sixty_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="@dimen/thirty_five_SP_Dimen"
+        />
+
+    <TextView
+        android:id="@+id/views_banner_id"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty_five_Dimen"
+        android:layout_below="@id/textView2"
+        android:layout_marginTop="@dimen/twenty_Dimen"
+        android:layout_marginBottom="@dimen/two_Dimen"
+        android:layout_marginStart="@dimen/forty_Dimen"
+        android:layout_marginEnd="@dimen/forty_Dimen"
+        android:paddingStart="@dimen/thirty_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:text="@string/seen"
+        android:textSize="@dimen/twenty_five_SP_Dimen"
+        android:background="#15F415"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/user_recycleerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/eight_Dimen"
+        android:layout_marginBottom="@dimen/zero_Dimen"
+        android:paddingTop="@dimen/five_Dimen"
+        android:paddingStart="@dimen/fifteen_Dimen"
+        android:paddingEnd="@dimen/five_Dimen"
+        android:paddingBottom="@dimen/eight_Dimen"
+        android:layout_below="@id/views_banner_id"
+        android:background="@drawable/aboutshowbody"
+        />
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/two_Dimen"
+    app:cardElevation="@dimen/two_Dimen"
+    app:cardBackgroundColor="@color/cardview_white"
+    app:contentPadding="@dimen/one_Dimen"
+    >
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:paddingStart="@dimen/ten_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="@dimen/thirty_five_SP_Dimen"
+        app:drawableStartCompat="@drawable/user_icon" />
+
+
+    <ImageView
+        android:id="@+id/postedImageOpenId"
+        android:layout_width="@dimen/four_hundred_Dimen"
+        android:layout_height="@dimen/four_hundred_Dimen"
+        android:background="#2E2D2D"
+        android:visibility="invisible"
+        android:layout_marginTop="?actionBarSize"
+        android:paddingTop="@dimen/thirty_Dimen"
+        android:paddingBottom="@dimen/ten_Dimen"
+
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?actionBarSize"
+        android:layout_marginBottom="@dimen/forty_Dimen"
+        >
+
+
+
+
+    <LinearLayout
+        android:id="@+id/post_Layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/two_Dimen"
+        android:layout_marginBottom="@dimen/zero_Dimen"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/postedUserDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/five_Dimen"
+
+            >
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/useriamgeS"
+                android:layout_width="@dimen/seventy_Dimen"
+                android:layout_height="@dimen/seventy_Dimen"
+                android:src="@drawable/user_icon"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/ten_Dimen"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/usernameS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/two_Dimen"
+                    android:layout_marginBottom="@dimen/zero_Dimen"
+                    android:text="@string/name"
+                    android:textColor="#000"
+                    android:textSize="@dimen/sixteen_SP_Dimen"
+                    />
+
+                <TextView
+                    android:id="@+id/bioS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/two_Dimen"
+                    android:layout_marginBottom="@dimen/zero_Dimen"
+                    android:text="@string/bioS"
+                    android:textColor="@color/colorAccent"
+
+                    />
+
+
+                <TextView
+                    android:id="@+id/posttimeS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/two_Dimen"
+                    android:layout_marginBottom="@dimen/zero_Dimen"
+                    android:text="@string/timestamp"
+                    android:textColor="@color/colorAccent"
+
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/postedItemsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/five_Dimen">
+
+
+
+            <TextView
+                android:id="@+id/photodeccriptionid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:layout_marginBottom="@dimen/five_Dimen"
+                android:paddingStart="@dimen/ten_Dimen"
+                android:paddingEnd="@dimen/fifteen_Dimen"
+                android:text="@string/write_something_about_it_txt"
+                android:autoLink="all"
+                android:textColor="@color/black"
+
+                />
+
+
+            <ImageView
+                android:id="@+id/postedImgaeId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two_hundred_Dimen"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:layout_marginStart="@dimen/five_Dimen"
+                android:layout_marginEnd="@dimen/five_Dimen"
+                android:layout_marginBottom="@dimen/five_Dimen"
+                android:minHeight="@dimen/one_hundred_sixty_Dimen"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/like_commentShowid"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/twenty_Dimen"
+                    android:textColor="@color/black"
+                    android:text="@string/be_the_first_person_to_like_this"
+                    android:paddingStart="@dimen/ten_Dimen"
+                    android:paddingEnd="@dimen/ten_Dimen"
+                    android:drawablePadding="@dimen/ten_Dimen"
+                    app:drawableStartCompat="@drawable/ic_liked_icon"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/comment_Count_Id"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/twenty_Dimen"
+                    android:textColor="@color/black"
+                    android:text="@string/commenttxt"
+                    android:paddingStart="@dimen/ten_Dimen"
+                    android:paddingEnd="@dimen/ten_Dimen"
+                    android:drawablePadding="@dimen/ten_Dimen"
+                    app:drawableStartCompat="@drawable/ic_comment_icon"
+                    android:layout_weight="2"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fifty_Dimen"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/five_Dimen">
+
+                <Button
+                    android:id="@+id/likebtnId"
+                    android:layout_width="@dimen/sixty_Dimen"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/liketxt"
+                    android:layout_marginTop="@dimen/three_Dimen"
+                    android:layout_marginBottom="@dimen/three_Dimen"
+                    android:layout_marginStart="@dimen/ten_Dimen"
+                    android:layout_marginEnd="@dimen/ten_Dimen"
+                    android:drawableStart="@drawable/ic_like_icon"
+
+                    />
+                <Button
+                    android:id="@+id/likedbtnId"
+                    android:layout_width="@dimen/sixty_Dimen"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/liketxt"
+                    android:layout_marginTop="@dimen/three_Dimen"
+                    android:layout_marginBottom="@dimen/three_Dimen"
+                    android:layout_marginStart="@dimen/ten_Dimen"
+                    android:layout_marginEnd="@dimen/ten_Dimen"
+                    android:drawableStart="@drawable/ic_liked_icon"
+
+                    />
+
+                <Button
+                    android:id="@+id/commentbtnId"
+                    android:layout_width="@dimen/sixty_Dimen"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:text="@string/commenttxt"
+                    android:layout_marginTop="@dimen/three_Dimen"
+                    android:layout_marginBottom="@dimen/three_Dimen"
+                    android:layout_marginStart="@dimen/ten_Dimen"
+                    android:layout_marginEnd="@dimen/ten_Dimen"
+                    android:drawableStart="@drawable/ic_comment_2"
+
+                    />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/thirty_five_Dimen"
+        android:text="@string/commenttxt"
+        android:textColor="@color/black"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:background="@color/red"
+        android:padding="@dimen/five_Dimen"
+        android:textSize="@dimen/twenty_SP_Dimen"
+        app:drawableStartCompat="@drawable/ic_comment_2" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/post_recycleerView_show_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            />
+
+
+
+    </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.cardview.widget.CardView>

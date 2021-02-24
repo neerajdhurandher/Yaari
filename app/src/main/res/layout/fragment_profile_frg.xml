@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/profile_frg_id"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile_frg"
+    android:background="@color/cardview_white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="@dimen/thirty_five_SP_Dimen"
+        android:paddingStart="@dimen/ten_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:layout_weight="4"
+        app:drawableStartCompat="@drawable/user_icon" />
+
+        <Button
+            android:id="@+id/feedback_btn_Id"
+            android:layout_width="@dimen/sixty_Dimen"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/eight_Dimen"
+            android:layout_marginEnd="@dimen/twenty_Dimen"
+            android:layout_marginBottom="@dimen/eight_Dimen"
+            android:layout_weight="1"
+            android:background="@drawable/buttonsinprofile"
+            android:text="@string/feedback_txt" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/pageid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        >
+
+        <RelativeLayout
+            android:id="@+id/profile_section"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/two_hundred_fifteen_Dimen"
+            android:layout_marginTop="@dimen/zero_Dimen"
+            android:layout_marginBottom="@dimen/ten_Dimen"
+            android:background="@drawable/profileshowlayout">
+
+            <ImageView
+                android:id="@+id/userCoverId"
+                android:layout_width="@dimen/four_hundred_Dimen"
+                android:layout_height="@dimen/ninety_Dimen"
+                android:layout_marginStart="@dimen/eight_Dimen"
+                android:layout_marginTop="@dimen/two_Dimen"
+                android:layout_marginEnd="@dimen/eight_Dimen"
+                android:background="@drawable/normal_details_layout" />
+
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/userimageId"
+                android:layout_width="@dimen/one_hundred_nineteen_Dimen"
+                android:layout_height="@dimen/one_hundred_nineteen_Dimen"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/twenty_Dimen"
+                android:layout_marginBottom="@dimen/forty_Dimen"
+                />
+
+            <TextView
+                android:id="@+id/nameshow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/thirty_Dimen"
+                android:layout_marginTop="@dimen/one_hundred_five_Dimen"
+                android:background="@color/cardview_white"
+                android:paddingStart="@dimen/ten_Dimen"
+                android:paddingTop="@dimen/two_Dimen"
+                android:paddingEnd="@dimen/ten_Dimen"
+                android:paddingBottom="@dimen/two_Dimen"
+                android:text="@string/name"
+                android:textAlignment="center"
+                android:textSize="@dimen/twenty_SP_Dimen"
+                android:textColor="@color/black"/>
+
+
+            <TextView
+                android:id="@+id/usernameshow"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/thirty_Dimen"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/thirty_Dimen"
+                android:layout_marginTop="@dimen/one_hundred_forty_four_Dimen"
+                android:background="@color/cardview_white"
+                android:paddingStart="@dimen/ten_Dimen"
+                android:paddingTop="@dimen/two_Dimen"
+                android:paddingEnd="@dimen/ten_Dimen"
+                android:paddingBottom="@dimen/two_Dimen"
+                android:text="@string/username"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+
+
+                />
+
+
+            <TextView
+                android:id="@+id/bioshow"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/twenty_seven_Dimen"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="@dimen/thirty_Dimen"
+                android:layout_marginTop="@dimen/one_hundred_eighty_Dimen"
+                android:layout_marginBottom="@dimen/eight_Dimen"
+                android:background="@color/cardview_white"
+                android:paddingStart="@dimen/fifteen_Dimen"
+                android:paddingTop="@dimen/three_Dimen"
+                android:paddingEnd="@dimen/ten_Dimen"
+                android:paddingBottom="@dimen/three_Dimen"
+                android:text="@string/bioS"
+                android:textColor="@color/black"
+                android:textSize="@dimen/fifteen_SP_Dimen" />
+
+            <ImageButton
+                android:id="@+id/editdetailId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/one_hundred_nineteen_Dimen"
+                android:layout_marginBottom="@dimen/thirty_three_Dimen"
+                android:background="#fff"
+                android:src="@drawable/ic_edit_pen" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="@dimen/ten_Dimen"
+            android:layout_marginEnd="@dimen/zero_Dimen"
+            android:layout_marginBottom="@dimen/zero_Dimen"
+            android:background="@drawable/profleshowbottom"
+            android:layout_below="@+id/profile_section"
+            >
+
+
+            <Button
+                android:id="@+id/postbtn"
+                android:layout_width="@dimen/two_hundred_Dimen"
+                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/fifteen_Dimen"
+                android:layout_marginTop="@dimen/thirty_Dimen"
+                android:background="@drawable/buttonsinprofile"
+                android:drawableStart="@drawable/ic_posts"
+                android:drawablePadding="@dimen/fifty_negative_Dimen"
+                android:paddingStart="@dimen/thirty_Dimen"
+                android:paddingEnd="@dimen/zero_Dimen"
+                android:text="@string/posts" />
+
+            <Button
+                android:id="@+id/followerbtn"
+                android:layout_width="@dimen/two_hundred_Dimen"
+                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/sixty_Dimen"
+                android:layout_marginTop="@dimen/one_hundred_thirty_Dimen"
+                android:background="@drawable/buttonsinprofile"
+                android:drawableStart="@drawable/ic_friends"
+                android:drawablePadding="@dimen/fifty_negative_Dimen"
+                android:paddingStart="@dimen/thirty_Dimen"
+                android:paddingEnd="@dimen/zero_Dimen"
+                android:text="@string/followerstxt" />
+
+            <Button
+                android:id="@+id/followreqbtn"
+                android:layout_width="@dimen/two_hundred_Dimen"
+                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/one_hundred_nineteen_Dimen"
+                android:layout_marginTop="@dimen/two_hundred_thirty_Dimen"
+                android:background="@drawable/buttonsinprofile"
+                android:drawableStart="@drawable/ic_friendreq"
+                android:drawablePadding="@dimen/ten_negative_Dimen"
+                android:paddingStart="@dimen/twenty_Dimen"
+                android:paddingEnd="@dimen/zero_Dimen"
+                android:text="@string/follow_req_txt" />
+
+            <Button
+                android:id="@+id/aboutbtn"
+                android:layout_width="@dimen/two_hundred_Dimen"
+                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/two_hundred_Dimen"
+                android:layout_marginTop="@dimen/three_hundred_twenty_Dimen"
+                android:background="@drawable/buttonsinprofile"
+                android:drawableStart="@drawable/ic_about"
+                android:drawablePadding="@dimen/fifty_negative_Dimen"
+                android:paddingStart="@dimen/thirty_Dimen"
+                android:paddingEnd="@dimen/zero_Dimen"
+                android:text="@string/about" />
+
+            <Button
+                android:id="@+id/logoutbtn"
+                android:layout_width="@dimen/one_hundred_Dimen"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/twenty_five_Dimen"
+                android:layout_marginTop="@dimen/three_hundred_thirty_Dimen"
+                android:layout_marginBottom="@dimen/twenty_Dimen"
+                android:background="@drawable/buttonsinprofile"
+                android:text="@string/logout" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E3DDDD"
+    tools:context=".Personal_Chat_Activity">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/chat_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/colorPrimaryDark"
+        >
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:layout_width="@dimen/thirty_five_Dimen"
+            android:layout_height="@dimen/thirty_five_Dimen"
+            android:scaleType="centerCrop"
+            android:src="@drawable/user_icon"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/samnevalekadp_id"
+            />
+        <LinearLayout
+            android:id="@+id/samnevale_ka_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/thirty_Dimen"
+            android:orientation="vertical"
+            android:layout_marginBottom="@dimen/five_Dimen"
+            >
+            <TextView
+                android:id="@+id/samnevalekanaam_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:text="@string/name"
+                android:textColor="#fff"
+                android:textSize="@dimen/twenty_SP_Dimen"
+
+                />
+
+            <TextView
+                android:id="@+id/activity_status_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/online"
+                android:textColor="#fff"
+
+                />
+
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chat_toolbar"
+        android:layout_above="@+id/msgtype"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/msgtype"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        >
+        <EditText
+            android:id="@+id/messagetype_id"
+            android:layout_width="@dimen/zero_Dimen"
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/entermsg"
+            android:layout_marginStart="@dimen/ten_Dimen"
+            android:padding="@dimen/fifteen_Dimen"
+            />
+
+        <ImageButton
+            android:id="@+id/attache_Image_btn_id"
+            android:background="@null"
+            android:layout_width="@dimen/forty_Dimen"
+            android:layout_height="@dimen/forty_Dimen"
+            android:src="@drawable/ic_attach_image_icon"
+
+            />
+
+
+        <ImageButton
+            android:id="@+id/sendbtn_id"
+            android:background="@null"
+            android:layout_width="@dimen/forty_Dimen"
+            android:layout_height="@dimen/forty_Dimen"
+            android:src="@drawable/ic_send_vector"
+
+            />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

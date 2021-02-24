@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/home_frg"
+    android:icon="@drawable/home_icon"
+    android:title="@string/home_nav_txt"
+
+    />
+
+    <item
+        android:id="@+id/search_frg"
+        android:icon="@drawable/search_icon"
+        android:title="@string/search_nav_txt"
+        />
+
+    <item
+        android:id="@+id/new_post_frg"
+        android:icon="@drawable/ic_add_new_post_icon"
+        android:title="@string/add_post_txt"
+        />
+
+
+    <item
+        android:id="@+id/chat_frg"
+        android:icon="@drawable/chat_icon"
+        android:title="@string/chat_nav_txt"
+
+        />
+
+    <item
+        android:id="@+id/profile_frg"
+        android:icon="@drawable/user_icon"
+        android:title="@string/profile_nav_txt"
+        />
+</menu>

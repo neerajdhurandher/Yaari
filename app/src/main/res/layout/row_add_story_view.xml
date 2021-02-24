@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginStart="@dimen/ten_Dimen"
+    android:layout_marginTop="@dimen/five_Dimen"
+    android:layout_marginBottom="@dimen/one_Dimen"
+    >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/story_useriamgeS"
+                android:layout_width="@dimen/fifty_Dimen"
+                android:layout_height="@dimen/fifty_Dimen"
+                android:background="@color/colorPrimary"
+                android:src="@drawable/user_icon"/>
+
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/story_add"
+                android:layout_width="@dimen/thirty_Dimen"
+                android:layout_height="@dimen/thirty_Dimen"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/twenty_Dimen"
+                android:layout_marginEnd="@dimen/eight_Dimen"
+                android:layout_marginBottom="@dimen/zero_Dimen"
+                android:src="@drawable/ic_add_new_post_icon" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/story_add_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/zero_Dimen"
+            android:paddingBottom="@dimen/one_Dimen"
+            android:paddingStart="@dimen/two_Dimen"
+            android:paddingEnd="@dimen/one_Dimen"
+            android:gravity="center"
+            android:maxLines="1"
+            android:text="@string/your_story_txt"/>
+
+
+
+
+
+</LinearLayout>

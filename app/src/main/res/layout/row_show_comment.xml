@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="@dimen/two_Dimen"
+    app:cardElevation="@dimen/two_Dimen"
+    app:cardBackgroundColor="@color/cardview_white"
+    app:contentPadding="@dimen/one_Dimen"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/ten_Dimen"
+            android:orientation="horizontal"
+            >
+            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+                android:id="@+id/useriamgeS"
+                android:layout_width="@dimen/forty_two_Dimen"
+                android:layout_height="@dimen/forty_two_Dimen"
+                android:src="@drawable/user_icon"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/eight_Dimen"
+                android:layout_marginEnd="@dimen/five_Dimen"
+                android:orientation="vertical">
+            <TextView
+                android:id="@+id/usernameS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/two_Dimen"
+                android:text="@string/name"
+                android:textColor="#000"
+                android:textSize="@dimen/twenty_SP_Dimen"
+                />
+
+                <TextView
+                    android:id="@+id/comment_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/timestamp"
+                    android:textColor="@color/gery"
+                    android:paddingBottom="@dimen/zero_Dimen"
+
+                    />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/commentTxtId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/ten_Dimen"
+            android:layout_marginEnd="@dimen/ten_Dimen"
+            android:layout_marginBottom="@dimen/four_Dimen"
+            android:layout_marginTop="@dimen/four_Dimen"
+            android:text="@string/commenttxt"
+            android:textColor="#000"
+            android:textSize="@dimen/sixteen_SP_Dimen"
+
+            />
+
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

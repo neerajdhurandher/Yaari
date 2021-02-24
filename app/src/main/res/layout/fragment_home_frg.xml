@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".home_frg"
+    android:background="@color/cardview_white">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle" />
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/zero_Dimen"
+        >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:text="@string/app_name"
+            android:textColor="#000"
+            android:textSize="@dimen/thirty_five_SP_Dimen"
+            android:paddingStart="@dimen/ten_Dimen"
+            android:paddingEnd="@dimen/ten_Dimen"
+            android:drawablePadding="@dimen/ten_Dimen"
+            app:drawableStartCompat="@drawable/user_icon" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/post_recycleerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

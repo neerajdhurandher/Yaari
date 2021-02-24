@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".udetailsf"
+    android:background="#fff">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".udetailsf"
+    android:background="#fff">
+
+
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="false"
+        android:text="User Details"
+        android:textAlignment="center"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/EmailIdtxt"
+        android:layout_width="195dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/textbox_layout"
+        android:hint="@string/loading"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="213dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:background="#5DB629"
+        android:hint="@string/loading"
+        android:padding="10dp"
+        android:paddingStart="5dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/GivenNametxt"
+        tools:ignore="RtlSymmetry" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="111dp"
+        android:layout_height="52dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="149dp"
+        android:text="LogOut"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/DisplayNametxt"
+        android:layout_width="195dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/textbox_layout"
+        android:hint="@string/loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PersonIdtxt" />
+
+    <ImageView
+        android:id="@+id/UserDpId"
+        android:layout_width="76dp"
+        android:layout_height="58dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="32dp"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/EmailIdtxt"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/GivenNametxt"
+        android:layout_width="195dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/textbox_layout"
+        android:hint="@string/loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/DisplayNametxt" />
+
+    <TextView
+        android:id="@+id/PersonIdtxt"
+        android:layout_width="195dp"
+        android:layout_height="31dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/textbox_layout"
+        android:hint="@string/loading"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailIdtxt" />
+
+    <EditText
+        android:id="@+id/editTextadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/EmailIdtxt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.862" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+    <!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewpager_ud"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="fill_parent"-->
+<!--        tools:ignore="MissingConstraints" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

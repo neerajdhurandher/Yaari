@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Edit_Profile_Activity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_marginTop="@dimen/zero_Dimen"
+        android:background="@drawable/toolbarstyle"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:orientation="horizontal">
+
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="?actionBarSize"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:paddingStart="@dimen/ten_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:layout_marginStart="@dimen/five_Dimen"
+        android:layout_marginEnd="@dimen/five_Dimen"
+        android:layout_weight="4"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="@dimen/twenty_five_SP_Dimen"
+        app:drawableStartCompat="@drawable/user_icon" />
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="@dimen/one_hundred_five_Dimen"
+        android:layout_height="@dimen/fifty_Dimen"
+        android:padding="@dimen/zero_Dimen"
+        android:text="@string/save"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/zero_Dimen"
+        android:layout_marginBottom="@dimen/zero_Dimen"
+        android:layout_marginEnd="@dimen/ten_Dimen"
+        android:layout_marginStart="@dimen/five_Dimen"
+       />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:background="@drawable/profleshowbottom"
+        app:layout_goneMarginTop="?actionBarSize">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="@dimen/three_hundred_Dimen"
+            android:layout_height="@dimen/forty_Dimen"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/fifty_Dimen"
+            android:layout_marginTop="@dimen/ten_Dimen"
+            android:background="#000"
+            android:text="@string/edit_profile"
+            android:textAlignment="center"
+            android:textColor="#fff"
+            android:textSize="@dimen/twenty_five_SP_Dimen" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/sixty_Dimen"
+            android:layout_marginBottom="@dimen/eight_Dimen"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/zero_Dimen"
+            android:layout_marginBottom="@dimen/zero_Dimen"
+            android:orientation="vertical"
+            >
+
+
+            <ImageButton
+                android:id="@+id/userCover_ImageId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/one_hundred_ten_Dimen"
+                android:layout_marginStart="@dimen/ten_Dimen"
+                android:layout_marginEnd="@dimen/ten_Dimen"
+                android:background="@drawable/edit_profile_background" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/zero_Dimen"
+                android:layout_marginBottom="@dimen/five_Dimen">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/zero_Dimen"
+                    android:layout_marginBottom="@dimen/twenty_Dimen"
+                    android:layout_marginEnd="@dimen/zero_Dimen"
+                    android:paddingStart="@dimen/ten_Dimen"
+                    android:paddingEnd="@dimen/twenty_Dimen"
+                    android:orientation="vertical">
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/thirty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:background="@color/gery"
+                        android:paddingStart="@dimen/twenty_SP_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:text="@string/usernameS"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/edit_username"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/fifty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:autofillHints="@string/username"
+                        android:background="@drawable/coustem_input"
+                        android:hint="@string/username"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/thirty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@color/gery"
+                        android:text="@string/bioS"
+                        android:textColor="@color/black" />
+
+
+                    <EditText
+                        android:id="@+id/edit_bio"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/fifty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:autofillHints="@string/bio"
+                        android:background="@drawable/coustem_input"
+                        android:hint="@string/bio"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/thirty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@color/gery"
+                        android:text="@string/dobS"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/edit_dob"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/fifty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:autofillHints="@string/dobS"
+                        android:background="@drawable/coustem_input"
+                        android:hint="@string/dob"
+                        android:inputType="date"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/thirty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@color/gery"
+                        android:text="@string/intrestS"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/edit_interest"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/fifty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:autofillHints="@string/interest"
+                        android:background="@drawable/coustem_input"
+                        android:hint="@string/intrestS"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/thirty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@color/gery"
+                        android:text="@string/rel_status"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/edit_rel_status"  android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/fifty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:autofillHints="@string/relationstatusS"
+                        android:background="@drawable/coustem_input"
+                        android:hint="@string/relationstatusS"
+                        android:textColor="@color/black"  />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/thirty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@color/gery"
+                        android:text="@string/city"
+                        android:textColor="@color/black" />
+
+                    <EditText
+                        android:id="@+id/edit_city"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/fifty_Dimen"
+                        android:layout_marginStart="@dimen/twenty_Dimen"
+                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:autofillHints="@string/relationstatusS"
+                        android:background="@drawable/coustem_input"
+                        android:hint="@string/cityS"
+                        android:textColor="@color/black"
+                        android:inputType="textPostalAddress"
+                         />
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/ten_Dimen"
+                    android:layout_marginEnd="@dimen/zero_Dimen"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/edit_pic"
+                        android:layout_width="@dimen/one_hundred_Dimen"
+                        android:layout_height="@dimen/one_hundred_Dimen"
+                        android:layout_marginTop="@dimen/twenty_Dimen"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:background="#FFFFFF"
+                        android:contentDescription="@string/loading"
+                        android:scaleType="centerCrop"
+                        android:src="@mipmap/ic_app_icon1_foreground" />
+
+                    <ImageButton
+                        android:id="@+id/editdetailId"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twenty_five_negative_Dimen"
+                        android:layout_marginStart="@dimen/fifteen_Dimen"
+                        android:background="#fff"
+                        android:src="@drawable/ic_edit_pen" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+        </ScrollView>
+
+
+</RelativeLayout>
+
+
+</RelativeLayout>

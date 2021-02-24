@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".chat_frg"
+    android:background="#BCB5B5">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:drawablePadding="@dimen/twenty_Dimen"
+        android:paddingStart="@dimen/twenty_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:text="@string/chat_headline"
+        android:textColor="#000"
+        android:textSize="@dimen/thirty_five_SP_Dimen"
+        app:drawableStartCompat="@drawable/chat_icon" />
+
+        <RelativeLayout
+            android:id="@+id/no_chat_view_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?actionBarSize"
+            android:layout_marginBottom="@dimen/sixty_Dimen"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/two_hundred_Dimen"
+                android:background="@color/green"
+                android:layout_marginEnd="@dimen/twenty_Dimen"
+                android:layout_marginStart="@dimen/twenty_Dimen"
+                android:layout_marginTop="@dimen/one_hundred_forty_Dimen"/>
+
+            <Button
+                android:id="@+id/goto_follower_Id"
+                android:layout_width="@dimen/one_hundred_Dimen"
+                android:layout_height="@dimen/one_hundred_Dimen"
+                android:layout_marginStart="@dimen/three_hundred_Dimen"
+                android:layout_marginTop="@dimen/four_hundred_Dimen"
+                android:text="@string/chat_to_yaar_txt" />
+
+        </RelativeLayout>
+
+
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recycleview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/ten_Dimen"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+
+            />
+
+    </LinearLayout>
+
+
+</FrameLayout>

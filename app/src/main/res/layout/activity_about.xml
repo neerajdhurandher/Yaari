@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarId"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@drawable/toolbarstyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableStart="@drawable/user_icon"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:paddingStart="@dimen/ten_Dimen"
+        android:paddingEnd="@dimen/zero_Dimen"
+        android:text="@string/app_name"
+        android:textColor="#000"
+        android:textSize="@dimen/thirty_five_SP_Dimen"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="?actionBarSize"
+        android:background="@color/red">
+
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="@dimen/three_hundred_Dimen"
+        android:layout_height="@dimen/forty_Dimen"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/twenty_Dimen"
+        android:layout_marginBottom="@dimen/fifteen_Dimen"
+        android:background="#000"
+        android:text="@string/about"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="@dimen/twenty_five_SP_Dimen" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/ten_Dimen"
+        android:layout_marginBottom="@dimen/twenty_Dimen"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+           android:layout_margin="@dimen/ten_Dimen">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:layout_marginBottom="@dimen/ten_Dimen">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_hundred_thirty_Dimen"
+                    android:layout_marginTop="@dimen/zero_Dimen"
+                    android:layout_marginBottom="@dimen/ten_Dimen"
+                    android:background="@color/cardview_white"
+                    />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/namelHead"
+                    android:layout_width="@dimen/ninety_Dimen"
+                    android:layout_height="@dimen/thirty_five_Dimen"
+                    android:layout_marginStart="@dimen/seventeen_Dimen"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/twenty_Dimen"
+                    android:background="@drawable/aboutshowhead"
+                    android:paddingTop="@dimen/five_Dimen"
+                    android:text="@string/name"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+
+                    />
+
+                <TextView
+                    android:id="@+id/nameBody"
+                    android:layout_width="@dimen/two_hundred_twentyN_two_Dimen"
+                    android:layout_height="@dimen/fifty_two_Dimen"
+                    android:layout_marginStart="@dimen/forty_Dimen"
+                    android:layout_marginTop="@dimen/fifteen_Dimen"
+                    android:layout_marginEnd="@dimen/sixteen_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:paddingTop="@dimen/ten_Dimen"
+                    android:paddingBottom="@dimen/five_Dimen"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/detailsnotAvailabel"
+                    android:background="@drawable/aboutshowbody"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/emailHead"
+                    android:layout_width="@dimen/ninety_Dimen"
+                    android:layout_height="@dimen/thirty_five_Dimen"
+                    android:layout_marginStart="@dimen/seventeen_Dimen"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/twenty_Dimen"
+                    android:paddingTop="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowhead"
+                    android:text="@string/email"
+                    android:textAlignment="center"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/emailBody"
+                    android:layout_width="@dimen/two_hundred_twentyN_two_Dimen"
+                    android:layout_height="@dimen/fifty_two_Dimen"
+                    android:layout_marginStart="@dimen/forty_Dimen"
+                    android:layout_marginTop="@dimen/fifteen_Dimen"
+                    android:layout_marginEnd="@dimen/sixteen_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:paddingTop="@dimen/ten_Dimen"
+                    android:paddingBottom="@dimen/five_Dimen"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/detailsnotAvailabel"
+                    android:background="@drawable/aboutshowbody" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/dobHead"
+                    android:layout_width="@dimen/ninety_Dimen"
+                    android:layout_height="@dimen/thirty_five_Dimen"
+                    android:layout_marginStart="@dimen/seventeen_Dimen"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/twenty_Dimen"
+                    android:paddingTop="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowhead"
+                    android:text="@string/dobS"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+
+                    />
+
+                <TextView
+                    android:id="@+id/dobBody"
+                    android:layout_width="@dimen/two_hundred_twentyN_two_Dimen"
+                    android:layout_height="@dimen/fifty_two_Dimen"
+                    android:layout_marginStart="@dimen/forty_Dimen"
+                    android:layout_marginTop="@dimen/fifteen_Dimen"
+                    android:layout_marginEnd="@dimen/sixteen_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:paddingTop="@dimen/ten_Dimen"
+                    android:paddingBottom="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowbody"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/detailsnotAvailabel"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/intrestHead"
+                    android:layout_width="@dimen/ninety_Dimen"
+                    android:layout_height="@dimen/thirty_five_Dimen"
+                    android:layout_marginStart="@dimen/seventeen_Dimen"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/twenty_Dimen"
+                    android:paddingTop="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowhead"
+                    android:text="@string/intrestS"
+                    android:textAlignment="center"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/intrestBody"
+                    android:layout_width="@dimen/two_hundred_twentyN_two_Dimen"
+                    android:layout_height="@dimen/fifty_two_Dimen"
+                    android:layout_marginStart="@dimen/forty_Dimen"
+                    android:layout_marginTop="@dimen/fifteen_Dimen"
+                    android:layout_marginEnd="@dimen/sixteen_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:paddingTop="@dimen/ten_Dimen"
+                    android:paddingBottom="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowbody"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/detailsnotAvailabel"
+                   />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/relationstatusHead"
+                    android:layout_width="@dimen/one_hundred_nineteen_Dimen"
+                    android:layout_height="@dimen/forty_Dimen"
+                    android:layout_marginStart="@dimen/ten_Dimen"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:background="@drawable/aboutshowhead"
+                    android:text="@string/relationstatusS"
+                    android:textAlignment="center"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/relationstatusBody"
+                    android:layout_width="@dimen/two_hundred_twentyN_two_Dimen"
+                    android:layout_height="@dimen/fifty_two_Dimen"
+                    android:layout_marginStart="@dimen/twenty_Dimen"
+                    android:layout_marginTop="@dimen/fifteen_Dimen"
+                    android:layout_marginEnd="@dimen/sixteen_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:paddingTop="@dimen/ten_Dimen"
+                    android:paddingBottom="@dimen/five_Dimen"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/detailsnotAvailabel"
+                    android:background="@drawable/aboutshowbody"
+
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/cityHead"
+                    android:layout_width="@dimen/ninety_Dimen"
+                    android:layout_height="@dimen/thirty_five_Dimen"
+                    android:layout_marginStart="@dimen/seventeen_Dimen"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/twenty_Dimen"
+                    android:paddingTop="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowhead"
+                    android:text="@string/cityS"
+                    android:textAlignment="center"
+                    android:textColor="#fff" />
+
+                <TextView
+                    android:id="@+id/cityBody"
+                    android:layout_width="@dimen/two_hundred_twentyN_two_Dimen"
+                    android:layout_height="@dimen/fifty_two_Dimen"
+                    android:layout_marginStart="@dimen/forty_Dimen"
+                    android:layout_marginTop="@dimen/fifteen_Dimen"
+                    android:layout_marginEnd="@dimen/sixteen_Dimen"
+                    android:layout_marginBottom="@dimen/fifteen_Dimen"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:paddingTop="@dimen/ten_Dimen"
+                    android:paddingBottom="@dimen/five_Dimen"
+                    android:background="@drawable/aboutshowbody"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:text="@string/detailsnotAvailabel"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+                <Button
+                    android:id="@+id/backbtn"
+                    android:layout_width="@dimen/eighty_Dimen"
+                    android:layout_height="@dimen/forty_Dimen"
+                    android:layout_marginStart="@dimen/twenty_five_Dimen"
+                    android:background="@drawable/back_arrow"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

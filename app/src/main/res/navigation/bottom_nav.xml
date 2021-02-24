@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav"
+    app:startDestination="@id/home_frg">
+
+    <fragment
+        android:id="@+id/home_frg"
+        android:name="com.example.apptrail4.home_frg"
+        android:label="fragment_home_frg"
+        tools:layout="@layout/fragment_home_frg" >
+        <action
+            android:id="@+id/action_home_frg_to_search_frg"
+            app:destination="@id/search_frg"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/search_frg"
+        android:name="com.example.apptrail4.search_frg"
+        android:label="fragment_search_frg"
+        tools:layout="@layout/fragment_search_frg" />
+    <fragment
+        android:id="@+id/chat_frg"
+        android:name="com.example.apptrail4.chat_frg"
+        android:label="fragment_chat_frg"
+        tools:layout="@layout/fragment_chat_frg" />
+    <fragment
+        android:id="@+id/profile_frg"
+        android:name="com.example.apptrail4.profile_frg"
+        android:label="fragment_profile_frg"
+        tools:layout="@layout/fragment_profile_frg" />
+    <fragment
+        android:id="@+id/new_post_frg"
+        android:name="com.example.apptrail4.new_post_frg"
+        android:label="fragment_new_post_frg"
+        tools:layout="@layout/fragment_new_post_frg" />
+
+
+</navigation>

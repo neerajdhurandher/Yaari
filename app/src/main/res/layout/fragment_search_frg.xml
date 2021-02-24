@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".search_frg"
+android:background="#fff">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:drawablePadding="@dimen/ten_Dimen"
+            android:paddingStart="@dimen/ten_Dimen"
+            android:paddingEnd="@dimen/zero_Dimen"
+            android:text="@string/app_name"
+            android:textColor="#000"
+            android:textSize="@dimen/thirty_five_SP_Dimen"
+            app:drawableStartCompat="@drawable/user_icon" />
+
+          <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fifty_Dimen"
+              android:layout_marginTop="@dimen/five_Dimen"
+              android:layout_marginBottom="@dimen/five_Dimen">
+
+            <EditText
+                android:id="@+id/search_user_box_id"
+                android:layout_width="@dimen/three_hundred_Dimen"
+                android:layout_height="@dimen/forty_five_Dimen"
+                android:layout_marginStart="@dimen/ten_Dimen"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:background="@drawable/aboutshowbody"
+                android:hint="@string/searchboxtxt"
+                android:paddingStart="@dimen/twenty_Dimen"
+                android:paddingTop="@dimen/three_Dimen"
+                android:paddingEnd="@dimen/ten_Dimen"
+                android:paddingBottom="@dimen/three_Dimen"
+                android:maxLines="1"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingsearchbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/ten_Dimen"
+                android:layout_marginBottom="@dimen/two_Dimen"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/floating_search_icon"
+                app:backgroundTint="@color/cardview_white"
+                app:rippleColor="@color/colorPrimaryDark"
+                />
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_recycleerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="@dimen/ten_Dimen" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</FrameLayout>
+

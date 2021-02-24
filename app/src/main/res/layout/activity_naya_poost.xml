@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NayaPoostActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+  <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="?actionBarSize"
+      >
+
+      <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:drawablePadding="@dimen/ten_Dimen"
+          android:paddingStart="@dimen/ten_Dimen"
+          android:paddingEnd="@dimen/two_Dimen"
+          android:layout_marginTop="@dimen/eight_Dimen"
+          android:layout_marginBottom="@dimen/zero_Dimen"
+          android:text="@string/newpost"
+          android:textColor="#000"
+          android:textSize="@dimen/thirty_SP_Dimen"
+          app:drawableStartCompat="@drawable/ic_new_post" />
+
+      <Button
+          android:id="@+id/postbtn"
+          android:layout_width="@dimen/one_hundred_Dimen"
+          android:layout_height="@dimen/forty_Dimen"
+          android:layout_alignParentEnd="true"
+          android:layout_alignParentBottom="true"
+          android:layout_gravity="end"
+          android:layout_marginEnd="@dimen/thirty_Dimen"
+          android:layout_marginBottom="@dimen/eight_Dimen"
+          android:text="@string/posttxt"
+          android:background="@color/colorPrimary"
+          />
+
+  </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/ten_Dimen"
+
+        >
+        <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/useriamgeS"
+            android:layout_width="@dimen/eighty_Dimen"
+            android:layout_height="@dimen/eighty_Dimen"
+            android:src="@drawable/user_icon"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/ten_Dimen"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/usernameS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:text="@string/name"
+                android:textColor="#000"
+                android:textSize="@dimen/sixteen_SP_Dimen"
+                />
+
+            <TextView
+                android:id="@+id/bioS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:text="@string/email"
+                android:textColor="@color/colorAccent"
+
+                />
+
+
+            <TextView
+                android:id="@+id/timeS"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/five_Dimen"
+                android:text="@string/currentTime"
+                android:textColor="@color/colorAccent"
+
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/ten_Dimen"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/uploadImageId"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/three_hundred_Dimen"
+                android:background="#B8B5B5"
+                android:padding="@dimen/eighty_Dimen"
+                android:src="@drawable/ic_new_post"
+
+                />
+
+            <EditText
+                android:id="@+id/textaboutimage"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/one_hundred_Dimen"
+                android:inputType="textCapSentences|textMultiLine"
+                android:maxHeight="@dimen/one_hundred_Dimen"
+                android:gravity="start"
+                android:layout_margin="@dimen/ten_Dimen"
+                android:paddingStart="@dimen/ten_Dimen"
+               android:paddingEnd="@dimen/ten_Dimen"
+                android:paddingBottom="@dimen/three_Dimen"
+                android:paddingTop="@dimen/three_Dimen"
+                android:hint="@string/write_something_about_it_txt"
+                android:background="@drawable/textbox_layout"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>

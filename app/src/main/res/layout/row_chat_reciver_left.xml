@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+        android:layout_width="@dimen/fifty_Dimen"
+        android:layout_height="@dimen/fifty_Dimen"
+        android:id="@+id/reciverDP"
+        app:c_border_color="@null"
+        android:src="@drawable/user_icon"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="@dimen/five_Dimen"
+            android:layout_marginEnd="@dimen/five_Dimen"
+            >
+            <ImageView
+                android:id="@+id/image_Message"
+                android:layout_width="@dimen/two_hundred_fifty_Dimen"
+                android:layout_height="@dimen/two_hundred_fifty_Dimen"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:background="@drawable/chat_bg_receiver"
+                android:src="@drawable/ic_image"
+                android:contentDescription="@string/loading" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_Message"
+                android:layout_weight="1"
+                android:textSize="@dimen/sixteen_SP_Dimen"
+                android:textColor="@color/black"
+                android:background="@drawable/chat_bg_receiver"
+                android:padding="@dimen/fifteen_Dimen"
+                android:layout_marginStart="@dimen/two_Dimen"
+                android:text="@string/message_by_your_yaar_txt"
+                />
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/message_time"
+            android:text="@string/timestamp"
+            android:textColor="@color/gery"
+            android:textSize="@dimen/fifteen_SP_Dimen"
+            android:gravity="end"
+            android:textAlignment="viewEnd"
+
+            />
+
+        <TextView
+            android:id="@+id/seenId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delivered"
+            android:textColor="@color/gery"
+            android:textSize="@dimen/fifteen_SP_Dimen"
+            android:gravity="end"
+            android:textAlignment="textEnd"
+            android:visibility="gone"
+            />
+
+
+
+
+
+
+</LinearLayout>
+</LinearLayout>
