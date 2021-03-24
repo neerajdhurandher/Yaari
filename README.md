@@ -5,6 +5,10 @@ Welcome In a new Social Media Platform, which provides you to make new friends ,
 
 This is the first look of Yaari.
 
-![](app/src/main/res/drawable/app_ss_img_1.jpeg)
 
-<img src="app/src/main/res/drawable/app_ss_img_1.jpeg" width="100" height="100">
+<img src="app/src/main/res/drawable/app_ss_img_1.jpeg" width="250" height="350">
+
+This is Post page where you can see all the lattest posts uploaded by users.
+
+<img src="app/src/main/res/drawable/app_ss_img_2.jpeg" width="250" height="350">
+
