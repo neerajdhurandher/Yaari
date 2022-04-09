@@ -23,7 +23,8 @@
         <activity android:name=".HomeActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Next_User_Profile_Activity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

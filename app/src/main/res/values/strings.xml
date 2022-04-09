@@ -54,6 +54,7 @@
     <string name="acceptbtn">Accept</string>
     <string name="declinebtn">Decline</string>
     <string name="followerstxt">Follower</string>
+    <string name="following_txt">Following</string>
     <string name="follow_req_txt">Follow Requests</string>
     <string name="poststxt">Posts</string>
     <string name="detailsnotAvailabel">Details Not Available</string>
@@ -71,6 +72,8 @@
     <string name="posttxt">Post</string>
     <string name="write_something_about_it_txt">Write Something about it</string>
     <string name="currentTime">Current Time</string>
+
+    <string name="your_story_txt">Your story</string>
 
     <string name="liketxt">Like</string>
     <string name="commenttxt">Comment</string>

@@ -2,6 +2,7 @@ package com.example.apptrail4;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.Toast;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -32,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String loginkeyLA = "com.example.apptrail4.loginwelcome";
 
     private SignInButton googleSigninbtn;
-    private int RC_SIGN_IN = 1;
+    private static final int RC_SIGN_IN = 100;
     private CheckBox checkBox;
      FirebaseAuth mFirebaseAuth;
      FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -73,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
                 .requestEmail()
                 .build();
 
-        googleSignInClient = (GoogleSignInClient) GoogleSignIn.getClient(this,googleSignInOptions);
+        googleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
 
         googleSigninbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 handleSignInResult(task);
             }
             catch (Exception e){
+                Log.d("neeraj","on activity result error : - " + e.getMessage());
             }
            }
 
@@ -123,6 +126,9 @@ public class LoginActivity extends AppCompatActivity {
         }
         catch (ApiException e){
             Toast.makeText( LoginActivity.this,"Signed In Failed", Toast.LENGTH_SHORT).show();
+            Log.d("neeraj","signin error : - "+e.getMessage());
+            Log.d("neeraj","signin error : - "+completedTask.getResult().toString());
+
 
         }
     }
