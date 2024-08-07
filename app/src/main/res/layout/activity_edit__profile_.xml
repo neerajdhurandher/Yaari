@@ -40,14 +40,17 @@
     <Button
         android:id="@+id/btnsave"
         android:layout_width="@dimen/one_hundred_five_Dimen"
-        android:layout_height="@dimen/fifty_Dimen"
+        android:layout_height="@dimen/forty_five_Dimen"
         android:padding="@dimen/zero_Dimen"
         android:text="@string/save"
         android:layout_weight="1"
-        android:layout_marginTop="@dimen/zero_Dimen"
+        android:layout_marginTop="@dimen/five_Dimen"
         android:layout_marginBottom="@dimen/zero_Dimen"
         android:layout_marginEnd="@dimen/ten_Dimen"
         android:layout_marginStart="@dimen/five_Dimen"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:background="@drawable/rounded_btn_success"
        />
     </LinearLayout>
 
@@ -57,7 +60,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="?actionBarSize"
-        android:background="@drawable/profleshowbottom"
+        android:background="#8898EF"
         app:layout_goneMarginTop="?actionBarSize">
 
 
@@ -69,10 +72,10 @@
             android:layout_alignParentTop="true"
             android:layout_marginStart="@dimen/fifty_Dimen"
             android:layout_marginTop="@dimen/ten_Dimen"
-            android:background="#000"
+            android:background="@color/gray_scale"
             android:text="@string/edit_profile"
             android:textAlignment="center"
-            android:textColor="#fff"
+            android:textColor="@color/colorPrimary"
             android:textSize="@dimen/twenty_five_SP_Dimen" />
 
         <ScrollView
@@ -125,27 +128,29 @@
                         android:layout_marginStart="@dimen/twenty_Dimen"
                         android:layout_marginTop="@dimen/fifteen_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
-                        android:background="@color/gery"
+                        android:background="@drawable/simple_text"
                         android:paddingStart="@dimen/twenty_SP_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:text="@string/usernameS"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"/>
 
                     <EditText
                         android:id="@+id/edit_username"
                         android:layout_width="@dimen/two_hundred_Dimen"
                         android:layout_height="@dimen/fifty_Dimen"
-                        android:layout_marginStart="@dimen/twenty_Dimen"
-                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
+                        android:layout_marginTop="@dimen/zero_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
                         android:paddingStart="@dimen/fifteen_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:autofillHints="@string/username"
-                        android:background="@drawable/coustem_input"
+                        android:background="@drawable/custom_input_without_stoke"
                         android:hint="@string/username"
                         android:inputType="textPersonName"
                         android:textColor="@color/black"
@@ -163,24 +168,25 @@
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
-                        android:background="@color/gery"
+                        android:background="@drawable/simple_text"
                         android:text="@string/bioS"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"/>
 
 
                     <EditText
                         android:id="@+id/edit_bio"
                         android:layout_width="@dimen/two_hundred_Dimen"
                         android:layout_height="@dimen/fifty_Dimen"
-                        android:layout_marginStart="@dimen/twenty_Dimen"
-                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
                         android:paddingStart="@dimen/fifteen_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:autofillHints="@string/bio"
-                        android:background="@drawable/coustem_input"
+                        android:background="@drawable/custom_input_without_stoke"
                         android:hint="@string/bio"
                         android:inputType="textPersonName"
                         android:textColor="@color/black" />
@@ -195,23 +201,24 @@
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
-                        android:background="@color/gery"
+                        android:background="@drawable/simple_text"
                         android:text="@string/dobS"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"/>
 
                     <EditText
                         android:id="@+id/edit_dob"
                         android:layout_width="@dimen/two_hundred_Dimen"
                         android:layout_height="@dimen/fifty_Dimen"
-                        android:layout_marginStart="@dimen/twenty_Dimen"
-                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
                         android:paddingStart="@dimen/fifteen_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:autofillHints="@string/dobS"
-                        android:background="@drawable/coustem_input"
+                        android:background="@drawable/custom_input_without_stoke"
                         android:hint="@string/dob"
                         android:inputType="date"
                         android:textColor="@color/black" />
@@ -226,23 +233,24 @@
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
-                        android:background="@color/gery"
+                        android:background="@drawable/simple_text"
                         android:text="@string/intrestS"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"/>
 
                     <EditText
                         android:id="@+id/edit_interest"
                         android:layout_width="@dimen/two_hundred_Dimen"
                         android:layout_height="@dimen/fifty_Dimen"
-                        android:layout_marginStart="@dimen/twenty_Dimen"
-                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
                         android:paddingStart="@dimen/fifteen_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:autofillHints="@string/interest"
-                        android:background="@drawable/coustem_input"
+                        android:background="@drawable/custom_input_without_stoke"
                         android:hint="@string/intrestS"
                         android:textColor="@color/black" />
 
@@ -256,24 +264,133 @@
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
-                        android:background="@color/gery"
+                        android:background="@drawable/simple_text"
                         android:text="@string/rel_status"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"/>
 
-                    <EditText
-                        android:id="@+id/edit_rel_status"  android:layout_width="@dimen/two_hundred_Dimen"
+                    <TextView
+                        android:id="@+id/edit_rel_status"
+                        android:layout_width="@dimen/two_hundred_Dimen"
                         android:layout_height="@dimen/fifty_Dimen"
-                        android:layout_marginStart="@dimen/twenty_Dimen"
-                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
                         android:paddingStart="@dimen/fifteen_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:autofillHints="@string/relationstatusS"
-                        android:background="@drawable/coustem_input"
+                        android:background="@drawable/custom_input_without_stoke"
                         android:hint="@string/relationstatusS"
-                        android:textColor="@color/black"  />
+                        android:textColor="@color/black"
+                        android:clickable="true" />
+                    
+                    <LinearLayout
+                        android:id="@+id/sel_relation_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
+                        android:orientation="vertical"
+                        >
+
+                        <TextView
+                            android:layout_width="@dimen/two_hundred_Dimen"
+                            android:layout_height="@dimen/forty_Dimen"
+
+                            android:layout_marginTop="@dimen/fifteen_Dimen"
+                            android:layout_marginBottom="@dimen/zero_Dimen"
+                            android:paddingStart="@dimen/fifteen_Dimen"
+                            android:paddingTop="@dimen/five_Dimen"
+                            android:paddingEnd="@dimen/ten_Dimen"
+                            android:paddingBottom="@dimen/two_Dimen"
+                            android:background="@drawable/custom_input_accent_blue"
+                            android:text="@string/select_1_option_txt"
+                            android:textSize="@dimen/twenty_SP_Dimen"
+                            android:textColor="@color/cardview_white" />
+
+
+
+                        <TextView
+                        android:id="@+id/sel_single"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/forty_Dimen"
+
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@drawable/custom_input_accent_fade_blue"
+                        android:text="@string/single_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/sel_akhand_single"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/forty_Dimen"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@drawable/custom_input_accent_fade_blue"
+                        android:text="@string/akhand_single_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/sel_relationship"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/forty_Dimen"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@drawable/custom_input_accent_fade_blue"
+                        android:text="@string/in_relationship_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/sel_engaged"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/forty_Dimen"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@drawable/custom_input_accent_fade_blue"
+                        android:text="@string/engaged_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:id="@+id/sel_married"
+                        android:layout_width="@dimen/two_hundred_Dimen"
+                        android:layout_height="@dimen/forty_Dimen"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginBottom="@dimen/zero_Dimen"
+                        android:paddingStart="@dimen/fifteen_Dimen"
+                        android:paddingTop="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/ten_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        android:background="@drawable/custom_input_accent_fade_blue"
+                        android:text="@string/married_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:textColor="@color/black" />
+
+                    </LinearLayout>
+
+
+
 
 
                     <TextView
@@ -286,23 +403,24 @@
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
-                        android:background="@color/gery"
+                        android:background="@drawable/simple_text"
                         android:text="@string/city"
-                        android:textColor="@color/black" />
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"/>
 
                     <EditText
                         android:id="@+id/edit_city"
                         android:layout_width="@dimen/two_hundred_Dimen"
                         android:layout_height="@dimen/fifty_Dimen"
-                        android:layout_marginStart="@dimen/twenty_Dimen"
-                        android:layout_marginTop="@dimen/fifteen_Dimen"
+                        android:layout_marginStart="@dimen/twenty_five_Dimen"
                         android:layout_marginBottom="@dimen/zero_Dimen"
                         android:paddingStart="@dimen/fifteen_Dimen"
                         android:paddingTop="@dimen/five_Dimen"
                         android:paddingEnd="@dimen/ten_Dimen"
                         android:paddingBottom="@dimen/two_Dimen"
                         android:autofillHints="@string/relationstatusS"
-                        android:background="@drawable/coustem_input"
+                        android:background="@drawable/custom_input_without_stoke"
                         android:hint="@string/cityS"
                         android:textColor="@color/black"
                         android:inputType="textPostalAddress"
@@ -343,16 +461,19 @@
                         android:background="#fff"
                         android:src="@drawable/ic_edit_pen" />
 
+                    <EditText
+                        android:id="@+id/dp_caption_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:padding="@dimen/ten_Dimen"
+                        android:hint="@string/write_caption_txt"
+                        android:textSize="@dimen/fifteen_Dimen"
+                        android:background="@drawable/custom_input_without_stoke"
+                        />
                 </LinearLayout>
-
-
             </LinearLayout>
-
-
-
         </LinearLayout>
-
-
         </ScrollView>
 
 

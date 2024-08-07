@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppTrail4</string>
+    <string name="app_name">Yaari</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="login">\tLogin</string>
@@ -34,10 +34,10 @@
     <string name="save">Save</string>
 
     <string name="dobS">Birthday</string>
-    <string name="intrestS">Intrest In</string>
+    <string name="intrestS">Interest In</string>
     <string name="relationstatusS">Relationship Status</string>
     <string name="cityS">Live At</string>
-    <string name="searchboxtxt">Search User...</string>
+    <string name="searchboxtxt">Search User…</string>
     <string name="title_activity_personal__chat">Personal_Chat</string>
 
 
@@ -47,21 +47,22 @@
 
     <string name="seen">seen</string>
     <string name="delivered">delivered</string>
+    <string name="viewer">Viewer</string>
 
 
     <string name="follow">Follow</string>
     <string name="unfollow">Unfollow</string>
     <string name="acceptbtn">Accept</string>
     <string name="declinebtn">Decline</string>
-    <string name="followerstxt">Follower</string>
+    <string name="followerstxt">Followers</string>
     <string name="follow_req_txt">Follow Requests</string>
     <string name="poststxt">Posts</string>
     <string name="detailsnotAvailabel">Details Not Available</string>
     <string name="title_activity_basic__trail_">Basic_Trail_Activity</string>
 
     <string name="pendingfollowreq">Pending Follow Requests</string>
-    <string name="nofollowreq">There are no Follow Request Pending</string>
-    <string name="nofollower">You haven\'t any Follower \n Here All Users </string>
+    <string name="nofollowreq">Sorry, No Follow Request Pending</string>
+    <string name="nofollower">You haven\'t have any follower \n Here are all Users </string>
 
     <string name="findNewyaar">Find New Yaar </string>
 
@@ -73,7 +74,7 @@
     <string name="currentTime">Current Time</string>
 
     <string name="liketxt">Like</string>
-    <string name="commenttxt">Comment</string>
+    <string name="commenttxt">Comments</string>
     <string name="bioS">Bio</string>
     <string name="timestamp">Time</string>
     <string name="write_comment_txt">Write Comment here</string>
@@ -82,7 +83,7 @@
     <string name="view_all_txt">View all</string>
     <string name="read_all_comments_txt">Read all Comments</string>
     <string name="made_in_india_txt">Made in India</string>
-    <string name="neeraj_dhurandher_txt">Neeraj Dhurandher</string>
+    <string name="nee_dhu_txt">By Neeraj Dhurandher</string>
 
     <string name="how_was_your_experience_txt">How was your Experience</string>
     <string name="write_here_txt">Write here....</string>
@@ -93,16 +94,26 @@
     <string name="neeraj_dev_txt">neeraj.dev@yaari.in</string>
     <string name="submmit_txt">Submmit</string>
     <string name="usernameS">Username</string>
-    <string name="click_for_find_new_yaar_txt">click for Find new Yaar</string>
+    <string name="click_for_find_new_yaar_txt">Find new Yaar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="thankyou_for_your_feedback_txt">Thankyou for your Feedback...</string>
+    <string name="thankyou_for_your_feedback_txt">Thankyou for your Feedback</string>
     <string name="message_by_your_yaar_txt">Message by your Yaar</string>
     <string name="message_by_your_txt">Message by your</string>
     <string name="photo_txt">Photo</string>
     <string name="by_txt">By</string>
     <string name="chat_to_yaar_txt">Chat to Yaar</string>
+    <string name="write_caption_txt">Write_caption</string>
+    <string name="your_story_txt">Your Story</string>
+    <string name="following_txt">following</string>
+
+    <string name="single_txt">Single</string>
+    <string name="akhand_single_txt">Always Single</string>
+    <string name="in_relationship_txt">In Relationship</string>
+    <string name="married_txt">Married</string>
+    <string name="engaged_txt">Engaged</string>
+    <string name="select_1_option_txt">Select 1 Option</string>
 
 
 </resources>

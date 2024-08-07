@@ -16,6 +16,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.apptrail4.AdapterUserRV2;
+import com.example.apptrail4.ModelUser2;
+import com.example.apptrail4.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,14 +34,16 @@ import java.util.List;
 public class Follower_Activity extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    AdapterUserRV adapterUserRV;
-    List<ModelUser> userList;
+    AdapterUserRV2 adapterUserRV2;
+    List<ModelUser2> userList;
     FloatingActionButton fl_search_btn,searchbtnTop;
     EditText search_follower;
     FirebaseUser currentuser;
     TextView CurrentuserNameTop,followertxt,nofollowertxt;
     ImageView CurrentuserImage;
    RelativeLayout searchLayout;
+
+    private int followerCount= 0;
 
 
     public Follower_Activity(){
@@ -73,6 +78,26 @@ public class Follower_Activity extends AppCompatActivity {
 
         CurrentuserNameTop.setText(currentUserName);
 
+        DatabaseReference followerDatabase = FirebaseDatabase.getInstance().getReference("Users").child(currentuser.getUid()).child("Follower");
+
+        followerDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if (snapshot.exists()){
+
+                    followerCount = (int) snapshot.getChildrenCount();
+                    followertxt.setText("FOLLOWER   "+ " ( "+Integer.toString(followerCount)+ " ) ");
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         try {
             Glide.with(getApplicationContext()).load(currentUseImage).circleCrop().into(CurrentuserImage);
         }
@@ -80,6 +105,7 @@ public class Follower_Activity extends AppCompatActivity {
             Glide.with(getApplicationContext()).load(R.drawable.user_icon).circleCrop().into(CurrentuserImage);
 
         }
+
 
 
         userList  = new ArrayList<>();
@@ -164,17 +190,17 @@ public class Follower_Activity extends AppCompatActivity {
                 userList.clear();
                 for (DataSnapshot ds: snapshot.getChildren()){
 
-                    ModelUser modelUser = ds.getValue(ModelUser.class);
+                    ModelUser2 modelUser2 = ds.getValue(ModelUser2.class);
 
 
 
                         if (!searchfollower.isEmpty()){
 
-                            assert modelUser != null;
-                            if (modelUser.getDisplayname().toLowerCase().contains(searchfollower.toLowerCase()) ||
-                                    modelUser.getEmail().toLowerCase().contains(searchfollower.toLowerCase())){
+                            assert modelUser2 != null;
+                            if (modelUser2.getDisplayname().toLowerCase().contains(searchfollower.toLowerCase()) ||
+                                    modelUser2.getEmail().toLowerCase().contains(searchfollower.toLowerCase())){
 
-                                userList.add(modelUser);
+                                userList.add(modelUser2);
 
                             }
                         }
@@ -184,9 +210,9 @@ public class Follower_Activity extends AppCompatActivity {
 
 
 
-                    adapterUserRV = new AdapterUserRV(getApplicationContext(),userList);
-                    adapterUserRV.notifyDataSetChanged();
-                    recyclerView.setAdapter(adapterUserRV);
+                    adapterUserRV2 = new AdapterUserRV2(getApplicationContext(),userList);
+                    adapterUserRV2.notifyDataSetChanged();
+                    recyclerView.setAdapter(adapterUserRV2);
 
                 }
 
@@ -211,15 +237,15 @@ public class Follower_Activity extends AppCompatActivity {
                 userList.clear();
                 for (DataSnapshot ds: snapshot.getChildren()){
 
-                    ModelUser modelUser = ds.getValue(ModelUser.class);
+                    ModelUser2 modelUser2 = ds.getValue(ModelUser2.class);
 
 
-                        userList.add(modelUser);
+                        userList.add(modelUser2);
 
 
 
-                    adapterUserRV = new AdapterUserRV(getApplicationContext(),userList);
-                    recyclerView.setAdapter(adapterUserRV);
+                    adapterUserRV2= new AdapterUserRV2(getApplicationContext(),userList);
+                    recyclerView.setAdapter(adapterUserRV2);
 
                 }
 
@@ -252,16 +278,16 @@ public class Follower_Activity extends AppCompatActivity {
                 userList.clear();
                 for (DataSnapshot ds: snapshot.getChildren()){
 
-                    ModelUser modelUser = ds.getValue(ModelUser.class);
+                    ModelUser2 modelUser2 = ds.getValue(ModelUser2.class);
 
-                    if(!modelUser.getUid().equals(currentuser.getUid())){
+                    if(!modelUser2.getUid().equals(currentuser.getUid())){
 
-                        userList.add(modelUser);
+                        userList.add(modelUser2);
                     }
 
 
-                    adapterUserRV = new AdapterUserRV(getApplicationContext(),userList);
-                    recyclerView.setAdapter(adapterUserRV);
+                    adapterUserRV2 = new AdapterUserRV2(getApplicationContext(),userList);
+                    recyclerView.setAdapter(adapterUserRV2);
 
                 }
             }

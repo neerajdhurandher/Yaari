@@ -4,18 +4,23 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:contentPadding="@dimen/three_Dimen"
+    app:cardBackgroundColor="#FFFFFF"
+
     >
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_trans_bg"
+
+        >
 
 
         <com.blogspot.atifsoftwares.circularimageview.CircularImageView
             android:id="@+id/profilePicId"
             android:layout_width="@dimen/seventy_Dimen"
             android:layout_height="@dimen/seventy_Dimen"
-            android:src="@drawable/user_icon"/>
+            android:src="@drawable/user_icon" />
 
         <ImageView
             android:id="@+id/onlineStatusCircleID"
@@ -23,31 +28,30 @@
             android:layout_height="@dimen/twenty_Dimen"
             android:layout_marginTop="@dimen/forty_five_Dimen"
             android:layout_marginStart="@dimen/forty_five_Dimen"
-            android:background="@color/green"
             />
 
-           <TextView
-           android:id="@+id/usernameId"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="@string/username"
-               android:textColor="@color/black"
-           android:textSize="@dimen/twenty_SP_Dimen"
-           android:layout_toEndOf="@id/profilePicId"
-           android:layout_below="@id/usernameId"
-            android:layout_marginStart="@dimen/ten_Dimen" />
+        <TextView
+            android:id="@+id/usernameId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameId"
+            android:layout_marginStart="@dimen/ten_Dimen"
+            android:layout_toEndOf="@id/profilePicId"
+            android:paddingTop="@dimen/ten_Dimen"
+            android:text="@string/username"
+            android:textColor="@color/black"
+            android:textSize="@dimen/twenty_SP_Dimen" />
 
-          <TextView
+        <TextView
             android:id="@+id/lastmessageId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/entermsg"
-              android:maxLines="2"
-              android:layout_toEndOf="@id/profilePicId"
             android:layout_below="@id/usernameId"
             android:layout_marginStart="@dimen/ten_Dimen"
-              android:visibility="gone"
-            />
+            android:layout_toEndOf="@id/profilePicId"
+            android:maxLines="2"
+            android:text="@string/entermsg"
+            android:visibility="gone" />
         <TextView
             android:id="@+id/image_Massage_Id"
             android:layout_width="match_parent"

@@ -125,7 +125,7 @@ public class AboutActivity extends AppCompatActivity {
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotohome = new Intent(AboutActivity.this,HomeActivity.class);
+                Intent gotohome = new Intent(AboutActivity.this, HomeActivity.class);
                 startActivity(gotohome);
             }
         });

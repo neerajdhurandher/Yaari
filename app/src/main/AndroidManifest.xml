@@ -12,16 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Welcome_Activity"></activity>
+        <activity android:name=".Story_seen_users_Activity"></activity>
+        <activity android:name=".Story_view_Activity" />
+        <activity android:name=".Add_Story_Activity" />
+        <activity android:name=".Welcome_Activity" />
         <activity android:name=".Post_Comments_Activity" />
-        <activity android:name=".NayaPoostActivity" />
+        <activity android:name=".NewPostActivity" />
         <activity android:name=".FrequestsActivity" />
         <activity android:name=".Follower_Activity" />
         <activity android:name=".Personal_Chat_Activity" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".Edit_Profile_Activity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".FeedbackActivity" />
         <activity android:name=".Next_User_Profile_Activity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
@@ -30,6 +33,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <service
+            android:name=".notification.FirebaseService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".notification.FirebaseMessaging"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

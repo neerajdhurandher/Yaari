@@ -21,8 +21,9 @@
             android:layout_width="@dimen/seventy_Dimen"
             android:layout_height="@dimen/seventy_Dimen"
             android:src="@drawable/user_icon"/>
-        <LinearLayout
-            android:layout_width="match_parent"
+
+       <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/ten_Dimen"
             android:orientation="vertical"
@@ -48,6 +49,22 @@
                 />
 
         </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/following_state"
+            android:layout_width="77dp"
+            android:layout_height="@dimen/forty_Dimen"
+            android:layout_marginTop="@dimen/fifteen_Dimen"
+            android:layout_marginStart="@dimen/ten_Dimen"
+            android:layout_marginEnd="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/fifteen_Dimen"
+            android:gravity="center"
+            android:paddingStart="@dimen/three_Dimen"
+            android:paddingEnd="@dimen/three_Dimen"
+            android:text="@string/following_txt"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/sixteen_SP_Dimen" />
 
 
     </LinearLayout>

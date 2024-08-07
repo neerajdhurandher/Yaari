@@ -17,8 +17,6 @@ import androidx.core.app.NotificationCompat;
 import com.example.apptrail4.Personal_Chat_Activity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
@@ -124,31 +122,6 @@ public class FirebaseMessaging extends FirebaseMessagingService {
             j = i;
         }
         notification1.getNotificationManager().notify(j, builder.build());
-
-    }
-
-    @Override
-    public void onNewToken(@NonNull String s) {
-        super.onNewToken(s);
-
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        if (currentUser!= null){
-
-            updateToken(s);
-        }
-    }
-
-    private void updateToken(String tokenRefresh) {
-
-        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
-
-        DatabaseReference token_ref = FirebaseDatabase.getInstance().getReference("Tokens");
-
-        Token token = new Token(tokenRefresh);
-
-        token_ref.child(currentUser.getUid()).setValue(token);
-
 
     }
 }

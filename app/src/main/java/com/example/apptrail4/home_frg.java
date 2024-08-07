@@ -11,6 +11,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptrail4.Adapter_Show_Post;
+import com.example.apptrail4.Adapter_Story;
+import com.example.apptrail4.ModelShowPost;
+import com.example.apptrail4.ModelStory;
+import com.example.apptrail4.ModelUser;
+import com.example.apptrail4.R;
+import com.example.apptrail4.notification.Token;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -18,6 +25,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,9 +42,15 @@ public class home_frg extends Fragment {
 
 
     RecyclerView recyclerView;
+    RecyclerView recyclerView_story;
 
     List<ModelShowPost> postList;
     Adapter_Show_Post adapter_show_post;
+
+    List<ModelStory> storyList;
+    Adapter_Story adapter_story;
+
+    List<String> allUserList;
 
 
 
@@ -57,23 +71,47 @@ public class home_frg extends Fragment {
 
         recyclerView = view.findViewById(R.id.post_recycleerView);
 
+        recyclerView_story = view.findViewById(R.id.post_recycleerView_story);
 
-
-
-
-
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        layoutManager.setStackFromEnd(true);
-        layoutManager.setReverseLayout(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView_story.setHasFixedSize(true);
 
         postList = new ArrayList<>();
+        storyList = new ArrayList<>();
+
+
+        // leaner layout adpater manager for post
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,true);
+
+         layoutManager.setStackFromEnd(true);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter_show_post = new Adapter_Show_Post(getActivity(), postList);
+        recyclerView.setAdapter(adapter_show_post);
 
 
 
+       // leaner layout adpater manager for story
+
+        LinearLayoutManager layoutManager_story = new LinearLayoutManager(getActivity(),LinearLayoutManager.HORIZONTAL,false);
+
+        recyclerView_story.setLayoutManager(layoutManager_story);
+
+        adapter_story = new Adapter_Story(getActivity(),storyList);
+
+        recyclerView_story.setAdapter(adapter_story);
+
+
+
+        all_users_id();
+
+        updateToken(FirebaseInstanceId.getInstance().getToken());
+
+
+        readStory();
 
         loadPosts();
+
 
 
 
@@ -81,12 +119,54 @@ public class home_frg extends Fragment {
 
     }
 
+    private void all_users_id() {
+
+        allUserList = new ArrayList<>();
+
+        final FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference userref = FirebaseDatabase.getInstance().getReference("Users");
+        userref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                allUserList.clear();
+                for (DataSnapshot ds: snapshot.getChildren()){
+
+                    ModelUser userall = ds.getValue(ModelUser.class);
+
+                    if (!userall.getUid().equals(currentUser.getUid())) {
+
+                        allUserList.add(ds.getKey());
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+    }
+
+    private void updateToken(String tokenRefresh) {
+
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token token = new Token(tokenRefresh);
+        databaseRef.child(currentUser.getUid()).setValue(token);
+
+    }
 
 
 
     private void loadPosts() {
 
         final DatabaseReference posts_databaseReference = FirebaseDatabase.getInstance().getReference("Posts");
+
+
         posts_databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -95,16 +175,15 @@ public class home_frg extends Fragment {
 
                     postList.clear();
 
+
                     for (DataSnapshot ds : snapshot.getChildren()) {
 
-                        ModelShowPost modelShowPost = ds.getValue(ModelShowPost.class);
+                       ModelShowPost modelShowPost = ds.getValue(ModelShowPost.class);
 
                         postList.add(modelShowPost);
-                        adapter_show_post = new Adapter_Show_Post(getActivity(), postList);
-                        recyclerView.setAdapter(adapter_show_post);
-
 
                     }
+
                 }
             }
 
@@ -118,7 +197,51 @@ public class home_frg extends Fragment {
     }
 
 
+    private void readStory(){
 
+        DatabaseReference story_db = FirebaseDatabase.getInstance().getReference().child("Story");
+
+        story_db.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                long currenttime = System.currentTimeMillis();
+                storyList.clear();
+
+                storyList.add(new ModelStory("", 0,0,"",
+                        FirebaseAuth.getInstance().getCurrentUser().getUid()));
+
+                for (String id : allUserList){
+
+                    int count_Story = 0;
+
+                    ModelStory modelStory = null;
+
+                    for (DataSnapshot ds: snapshot.child(id).getChildren()){
+                        modelStory = ds.getValue(ModelStory.class);
+
+                        if (currenttime > modelStory.getTime_start() && currenttime < modelStory.getTime_end()){
+
+                            count_Story++;
+                        }
+
+                    }
+                    if (count_Story > 0){
+
+                        storyList.add(modelStory);
+                    }
+
+                }
+                adapter_story.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
     private void checkOnlineStatus(String status){
 

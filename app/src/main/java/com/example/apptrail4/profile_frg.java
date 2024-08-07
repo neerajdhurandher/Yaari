@@ -21,8 +21,7 @@ import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -31,8 +30,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-
-import java.util.concurrent.Executor;
 
 
 public class profile_frg extends Fragment  {
@@ -56,7 +53,7 @@ public class profile_frg extends Fragment  {
     private String emailstr,username,fullname,bio,dob,interest,relationshipstatus,city;
      private ImageButton edit_btn;
 
-     private int followerCount = 0, Pnd_Foll_Req_Count = 0;
+      private int followerCount= 0, Pnd_Foll_Req_Count = 0;
 
 
 
@@ -92,10 +89,12 @@ public class profile_frg extends Fragment  {
         btnpost = F2F_fragment.findViewById(R.id.postbtn);
         btnfeedback = F2F_fragment.findViewById(R.id.feedback_btn_Id);
 
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestEmail()
+                .build();
 
 
-
-
+        mGoogleSignInClient = GoogleSignIn.getClient(getActivity(),gso);
 
 
         String uid = currentUser.getUid();
@@ -140,7 +139,6 @@ public class profile_frg extends Fragment  {
         });
 
 
-//        Toast.makeText(getActivity(), "hello "+currentUser.getDisplayName(), Toast.LENGTH_SHORT).show();
 
         // Query for Fetch Current User Data from database
 
@@ -203,15 +201,12 @@ public class profile_frg extends Fragment  {
 
 
 
-        // Butttons for Go in diffeerent Activitiess or Pages
+        // Buttons for Go in different Activities or Pages
 
         btnlogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                signOut();
-//                Intent i = new Intent(getActivity(), LoginActivity.class);
-//                startActivity(i);
+//                signOut();
 
             }
 
@@ -220,16 +215,16 @@ public class profile_frg extends Fragment  {
         edit_btn.setOnClickListener(new View.OnClickListener() {
              @Override
             public void onClick(View v) {
-                 Intent gotoeditprofile = new Intent(getActivity(),Edit_Profile_Activity.class);
+                 Intent gotoeditprofile = new Intent(getActivity(), Edit_Profile_Activity.class);
               startActivity(gotoeditprofile);
 
-    }
-});
+            }
+        });
 
         btnabout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent  gotoabout = new Intent(getActivity(),AboutActivity.class);
+                Intent  gotoabout = new Intent(getActivity(), AboutActivity.class);
                 startActivity(gotoabout);
             }
         });
@@ -237,7 +232,7 @@ public class profile_frg extends Fragment  {
         btnfollower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotofollower = new Intent(getActivity(),Follower_Activity.class);
+                Intent gotofollower = new Intent(getActivity(), Follower_Activity.class);
                 startActivity(gotofollower);
             }
         });
@@ -245,7 +240,7 @@ public class profile_frg extends Fragment  {
         btnfollowreq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotoPndFollReq = new Intent(getActivity(),FrequestsActivity.class);
+                Intent gotoPndFollReq = new Intent(getActivity(), FrequestsActivity.class);
                 startActivity(gotoPndFollReq);
             }
         });
@@ -253,7 +248,7 @@ public class profile_frg extends Fragment  {
         btnfeedback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent feedback = new Intent(getActivity(), MainActivity.class);
+                Intent feedback = new Intent(getActivity(), FeedbackActivity.class);
                 startActivity(feedback);
             }
         });
@@ -301,15 +296,17 @@ return F2F_fragment;
 
     }
     private void signOut() {
-        mGoogleSignInClient.signOut()
-                .addOnCompleteListener((Executor) this, new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        // ...
-                        Intent i = new Intent(getActivity(), LoginActivity.class);
-                        startActivity(i);
-                    }
-                });
+//        FirebaseAuth.getInstance().signOut();
+//        mGoogleSignInClient.signOut().addOnCompleteListener((Executor) this, new OnCompleteListener<Void>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Void> task) {
+//                        // ...
+//                        Intent i = new Intent(getActivity(), LoginActivity.class);
+//                        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//                        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                        startActivity(i);
+//                    }
+//                });
     }
 
 }

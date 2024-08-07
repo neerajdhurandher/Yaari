@@ -13,6 +13,9 @@ package com.example.apptrail4;
         import androidx.recyclerview.widget.LinearLayoutManager;
         import androidx.recyclerview.widget.RecyclerView;
 
+        import com.example.apptrail4.AdapterUserRV;
+        import com.example.apptrail4.ModelUser;
+        import com.example.apptrail4.R;
         import com.google.android.material.floatingactionbutton.FloatingActionButton;
         import com.google.firebase.auth.FirebaseAuth;
         import com.google.firebase.auth.FirebaseUser;

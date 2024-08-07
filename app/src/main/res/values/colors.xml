@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="cardview_white">#fff</color>
     <color name="colorAccent">#FF808080</color>
     <color name="black">#000</color>
     <color name="red">#FF0000</color>
     <color name="gery">#FF808080</color>
+    <color name="grey">#FF808080</color>
+    <color name="dark_grey">#3C3C3C</color>
     <color name="green">#00AC00</color>
-
-
+    <color name="dark_blue">#3700B3</color>
+    <color name="fade_black">#A4000000</color>
+    <color name="secondary">#FFEB3B</color>
+    <color name="danger">#EBFF0000</color>
+    <color name="blue_accent">#FD6F55FB</color>
+    <color name="blue_bg">#AEADA1ED</color>
+    <color name="light_blue">#2F6CE5</color>
+    <color name="success">#09A335</color>
 </resources>

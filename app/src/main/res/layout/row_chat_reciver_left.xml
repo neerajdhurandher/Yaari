@@ -25,6 +25,7 @@
             android:orientation="vertical"
             android:layout_marginStart="@dimen/five_Dimen"
             android:layout_marginEnd="@dimen/five_Dimen"
+
             >
             <ImageView
                 android:id="@+id/image_Message"
@@ -32,21 +33,21 @@
                 android:layout_height="@dimen/two_hundred_fifty_Dimen"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-                android:background="@drawable/chat_bg_receiver"
                 android:src="@drawable/ic_image"
-                android:contentDescription="@string/loading" />
+                android:contentDescription="@string/loading"
+                android:background="@drawable/chat_bg_receiver"
+                />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_Message"
-                android:layout_weight="1"
                 android:textSize="@dimen/sixteen_SP_Dimen"
                 android:textColor="@color/black"
-                android:background="@drawable/chat_bg_receiver"
                 android:padding="@dimen/fifteen_Dimen"
                 android:layout_marginStart="@dimen/two_Dimen"
                 android:text="@string/message_by_your_yaar_txt"
+                android:background="@drawable/chat_bg_receiver"
                 />
 
 

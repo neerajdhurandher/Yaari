@@ -9,8 +9,8 @@
 
             <corners android:radius="@dimen/ten_Dimen" />
             <stroke
-                android:width="@dimen/two_dip_Dimen"
-                android:color="#000000" />
+                android:width="@dimen/one_Dimen"
+                android:color="#918A8A" />
 
         </shape>
     </item>

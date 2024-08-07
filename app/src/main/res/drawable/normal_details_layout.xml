@@ -6,7 +6,7 @@
 
             <corners android:radius="@dimen/thirteen_Dimen"/>
 
-            <solid android:color="#A81138"/>
+            <solid android:color="#FFFFFF"/>
 
 
         </shape>

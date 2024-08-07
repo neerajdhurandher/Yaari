@@ -41,7 +41,8 @@
             android:layout_marginEnd="@dimen/twenty_Dimen"
             android:layout_marginBottom="@dimen/eight_Dimen"
             android:layout_weight="1"
-            android:background="@drawable/buttonsinprofile"
+            android:background="@drawable/rounded_btn_grey"
+            android:textColor="@color/white"
             android:text="@string/feedback_txt" />
 
     </LinearLayout>
@@ -59,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/two_hundred_fifteen_Dimen"
             android:layout_marginTop="@dimen/zero_Dimen"
-            android:layout_marginBottom="@dimen/ten_Dimen"
+
             android:background="@drawable/profileshowlayout">
 
             <ImageView
@@ -69,7 +70,8 @@
                 android:layout_marginStart="@dimen/eight_Dimen"
                 android:layout_marginTop="@dimen/two_Dimen"
                 android:layout_marginEnd="@dimen/eight_Dimen"
-                android:background="@drawable/normal_details_layout" />
+                android:background="@drawable/normal_details_layout"
+                android:src="@drawable/yaari_profile_bg_final" />
 
 
             <com.blogspot.atifsoftwares.circularimageview.CircularImageView
@@ -79,8 +81,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginEnd="@dimen/twenty_Dimen"
-                android:layout_marginBottom="@dimen/forty_Dimen"
-                />
+                android:layout_marginBottom="@dimen/forty_Dimen" />
 
             <TextView
                 android:id="@+id/nameshow"
@@ -97,8 +98,8 @@
                 android:paddingBottom="@dimen/two_Dimen"
                 android:text="@string/name"
                 android:textAlignment="center"
-                android:textSize="@dimen/twenty_SP_Dimen"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                android:textSize="@dimen/twenty_SP_Dimen" />
 
 
             <TextView
@@ -130,10 +131,10 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="@dimen/thirty_Dimen"
-                android:layout_marginTop="@dimen/one_hundred_eighty_Dimen"
+                android:layout_marginTop="175dp"
                 android:layout_marginBottom="@dimen/eight_Dimen"
                 android:background="@color/cardview_white"
-                android:paddingStart="@dimen/fifteen_Dimen"
+                android:paddingStart="@dimen/ten_Dimen"
                 android:paddingTop="@dimen/three_Dimen"
                 android:paddingEnd="@dimen/ten_Dimen"
                 android:paddingBottom="@dimen/three_Dimen"
@@ -159,20 +160,19 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_below="@+id/profile_section"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="@dimen/ten_Dimen"
+
             android:layout_marginEnd="@dimen/zero_Dimen"
             android:layout_marginBottom="@dimen/zero_Dimen"
-            android:background="@drawable/profleshowbottom"
-            android:layout_below="@+id/profile_section"
-            >
+            android:background="@drawable/profleshowbottom">
 
 
             <Button
                 android:id="@+id/postbtn"
                 android:layout_width="@dimen/two_hundred_Dimen"
-                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_height="@dimen/forty_five_Dimen"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="@dimen/fifteen_Dimen"
@@ -187,26 +187,26 @@
             <Button
                 android:id="@+id/followerbtn"
                 android:layout_width="@dimen/two_hundred_Dimen"
-                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_height="@dimen/forty_five_Dimen"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="@dimen/sixty_Dimen"
-                android:layout_marginTop="@dimen/one_hundred_thirty_Dimen"
+                android:layout_marginTop="@dimen/one_hundred_Dimen"
                 android:background="@drawable/buttonsinprofile"
                 android:drawableStart="@drawable/ic_friends"
-                android:drawablePadding="@dimen/fifty_negative_Dimen"
                 android:paddingStart="@dimen/thirty_Dimen"
                 android:paddingEnd="@dimen/zero_Dimen"
-                android:text="@string/followerstxt" />
+                android:text="@string/followerstxt"
+                android:textAlignment="center" />
 
             <Button
                 android:id="@+id/followreqbtn"
                 android:layout_width="@dimen/two_hundred_Dimen"
-                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_height="@dimen/forty_five_Dimen"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="@dimen/one_hundred_nineteen_Dimen"
-                android:layout_marginTop="@dimen/two_hundred_thirty_Dimen"
+                android:layout_marginTop="170dp"
                 android:background="@drawable/buttonsinprofile"
                 android:drawableStart="@drawable/ic_friendreq"
                 android:drawablePadding="@dimen/ten_negative_Dimen"
@@ -216,12 +216,12 @@
 
             <Button
                 android:id="@+id/aboutbtn"
-                android:layout_width="@dimen/two_hundred_Dimen"
-                android:layout_height="@dimen/sixty_Dimen"
+                android:layout_width="@dimen/one_hundred_eighty_Dimen"
+                android:layout_height="@dimen/forty_five_Dimen"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="@dimen/two_hundred_Dimen"
-                android:layout_marginTop="@dimen/three_hundred_twenty_Dimen"
+                android:layout_marginTop="240dp"
                 android:background="@drawable/buttonsinprofile"
                 android:drawableStart="@drawable/ic_about"
                 android:drawablePadding="@dimen/fifty_negative_Dimen"
@@ -231,15 +231,16 @@
 
             <Button
                 android:id="@+id/logoutbtn"
-                android:layout_width="@dimen/one_hundred_Dimen"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="@dimen/twenty_five_Dimen"
-                android:layout_marginTop="@dimen/three_hundred_thirty_Dimen"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="@dimen/fifteen_Dimen"
                 android:layout_marginBottom="@dimen/twenty_Dimen"
-                android:background="@drawable/buttonsinprofile"
-                android:text="@string/logout" />
+                android:background="@drawable/rounded_btn_danger"
+                android:text="@string/logout"
+                android:textColor="@color/white"
+                android:textSize="@dimen/eighteen_Dimen" />
 
 
         </RelativeLayout>

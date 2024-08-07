@@ -70,7 +70,7 @@ public class Post_Comments_Activity extends AppCompatActivity {
         postTime = findViewById(R.id.posttimeS);
 
         postedIamge = findViewById(R.id.postedImgaeId);
-        postedIamgeOpen = findViewById(R.id.postedImageOpenId);
+//        postedIamgeOpen = findViewById(R.id.postedImageOpenId);
         postDescripton = findViewById(R.id.photodeccriptionid);
         likecounter = findViewById(R.id.like_commentShowid);
         commentcounter = findViewById(R.id.comment_Count_Id);
@@ -96,7 +96,7 @@ public class Post_Comments_Activity extends AppCompatActivity {
         commentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent gotohome = new Intent(getApplicationContext(),HomeActivity.class);
+                Intent gotohome = new Intent(getApplicationContext(), HomeActivity.class);
                 startActivity(gotohome);
             }
         });

@@ -83,9 +83,6 @@ public class Adapter_Story extends  RecyclerView.Adapter<Adapter_Story.StoryHold
                     Intent gotoStory = new Intent(context,Story_view_Activity.class);
                     gotoStory.putExtra("userid",modelStory.getUser_Id());
                     context.startActivity(gotoStory);
-
-
-
                 }
             }
         });
@@ -223,7 +220,7 @@ public class Adapter_Story extends  RecyclerView.Adapter<Adapter_Story.StoryHold
                            @Override
                            public void onClick(DialogInterface dialog, int which) {
 
-                               Intent goto_addStory = new Intent(context,Add_Story_Activity.class);
+                               Intent goto_addStory = new Intent(context, Add_Story_Activity.class);
                                context.startActivity(goto_addStory);
                                dialog.dismiss();
 

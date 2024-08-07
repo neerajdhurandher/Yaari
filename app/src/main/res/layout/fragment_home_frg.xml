@@ -39,6 +39,18 @@ tools:context=".home_frg"
             app:drawableStartCompat="@drawable/user_icon" />
 
 
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/post_recycleerView_story"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/seventy_five_Dimen"
+            android:layout_margin="@dimen/five_Dimen"
+            android:paddingStart="@dimen/five_Dimen"
+            android:paddingEnd="@dimen/five_Dimen"
+            android:background="@drawable/aboutshowbody"
+            />
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/post_recycleerView"
             android:layout_width="match_parent"

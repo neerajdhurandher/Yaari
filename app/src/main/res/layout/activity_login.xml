@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E96FF442"
+    android:background="@drawable/night_view"
     tools:context=".LoginActivity"
     android:id="@+id/loginpageid">
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/google_button"
-        android:layout_width="@dimen/two_hundred_Dimen"
+        android:layout_width="@dimen/one_hundred_eighty_Dimen"
         android:layout_height="@dimen/seventy_Dimen"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="@dimen/ninety_Dimen"
-        android:layout_marginTop="@dimen/one_hundred_eighty_Dimen"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/one_hundred_Dimen"
+        android:layout_marginTop="@dimen/three_hundred_twenty_Dimen"
+        android:background="@drawable/simple_text"
         android:textSize="@dimen/thirty_SP_Dimen" />
 
     <CheckBox
@@ -25,13 +27,14 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="@dimen/one_hundred_ten_Dimen"
-        android:layout_marginTop="@dimen/three_hundred_thirty_Dimen"
-        android:background="@color/cardview_white"
-        android:paddingStart="@dimen/fifteen_Dimen"
+        android:layout_marginStart="@dimen/one_hundred_Dimen"
+        android:layout_marginTop="@dimen/four_hundred_Dimen"
+        android:background="@drawable/textview_trans_bg"
+        android:buttonTint="@color/cardview_white"
+        android:paddingStart="@dimen/ten_Dimen"
         android:paddingEnd="@dimen/zero_Dimen"
         android:text="@string/T_C"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/google_button" />
+        android:textColor="@color/cardview_white"
+        android:textSize="@dimen/twenty_SP_Dimen" />
 
 </RelativeLayout>

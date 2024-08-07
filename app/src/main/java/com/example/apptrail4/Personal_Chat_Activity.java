@@ -34,6 +34,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.apptrail4.notification.APIService;
+import com.example.apptrail4.notification.CLient;
+import com.example.apptrail4.notification.Data;
+import com.example.apptrail4.notification.Responce;
+import com.example.apptrail4.notification.Sender;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -56,6 +61,10 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Personal_Chat_Activity extends AppCompatActivity {
     Toolbar toolbar;
@@ -90,6 +99,9 @@ public class Personal_Chat_Activity extends AppCompatActivity {
     String cameraPermission[];
     String storagePermission[];
 
+    APIService apiService;
+    boolean notify = false;
+
 
 
     @Override
@@ -100,6 +112,12 @@ public class Personal_Chat_Activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.chat_toolbar);
         setSupportActionBar(toolbar);
         toolbar.setTitle("");
+
+        // api service
+
+        apiService = CLient.getClient("https://fcm.googleapis.com/").create(APIService.class);
+
+
         recyclerView = findViewById(R.id.chat_recycleview);
         samnevalekanaam = findViewById(R.id.samnevalekanaam_id);
         sanmnevalekidp = findViewById(R.id.samnevalekadp_id);
@@ -133,7 +151,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String Next_Person_Uid = samnevaleuserkiUidget;
-                Intent gotoNextPersonProfile = new Intent(Personal_Chat_Activity.this,Next_User_Profile_Activity.class);
+                Intent gotoNextPersonProfile = new Intent(Personal_Chat_Activity.this, Next_User_Profile_Activity.class);
                 gotoNextPersonProfile.putExtra("Next_Person_Uid_Var",Next_Person_Uid);
                 startActivity(gotoNextPersonProfile);
             }
@@ -236,6 +254,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
            @Override
            public void onClick(View v) {
 
+               notify = true;
                String message = typedMessage.getText().toString().trim();
 
                if (TextUtils.isEmpty(message)){
@@ -301,6 +320,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
         
     }
 
+
     private void sendMessage(String message) {
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -351,6 +371,28 @@ public class Personal_Chat_Activity extends AppCompatActivity {
             }
         });
 
+        final String message_str = message;
+
+        DatabaseReference databaseReference_2 = FirebaseDatabase.getInstance().getReference("Users").child(currentuser.getUid());
+        databaseReference_2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                ModelUser modelUser = snapshot.getValue(ModelUser.class);
+               if (notify) {
+
+                   sendNotification(samnevaleuserkiUidget, modelUser.getDisplayname(), message_str);
+               }
+                notify = false;
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     private void sendImageMessage(Uri imageuri) throws IOException {
@@ -361,7 +403,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
         // get bitMap to imageuri
         Bitmap  image_bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(),imageuri);
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        image_bitmap.compress(Bitmap.CompressFormat.PNG,50,baos);
+        image_bitmap.compress(Bitmap.CompressFormat.PNG,25,baos);
         byte[] bytes_data = baos.toByteArray();
 
         StorageReference storageReference = FirebaseStorage.getInstance().getReference().child(fileAndPath_Name);
@@ -424,11 +466,6 @@ public class Personal_Chat_Activity extends AppCompatActivity {
                             });
 
 
-                            // send Notifiacation
-
-
-
-
                         }
 
                     }
@@ -439,10 +476,87 @@ public class Personal_Chat_Activity extends AppCompatActivity {
             }
         });
 
+        // send Notifiacation
+
+        DatabaseReference databaseReference_2 = FirebaseDatabase.getInstance().getReference("Users").child(currentuser.getUid());
+        databaseReference_2.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                ModelUser modelUser = snapshot.getValue(ModelUser.class);
+                if (notify) {
+
+                    sendNotification(samnevaleuserkiUidget, modelUser.getDisplayname(), "Send a Image");
+                }
+                notify = false;
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
 
+    private void sendNotification(String samnevaleuserkiUid_token, final String currentUserName, final String message_send){
 
 
+        DatabaseReference allTokens = FirebaseDatabase.getInstance().getReference("Tokens");
+        Query query = allTokens.orderByKey().equalTo(samnevaleuserkiUid_token);
+
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    for (DataSnapshot ds : snapshot.getChildren()) {
+
+                        String y = ""+ds.child("token").getValue();
+
+//                      Token t =  ds.getValue(Token.class);
+//
+//                        assert t != null;
+//                        String  a = "" + t.getToken();
+
+
+                        Data data = new Data(currentuser.getUid(), currentUserName + ":" + message_send, "New Message"
+                                ,samnevaleuserkiUidget, R.mipmap.ic_launcher);
+
+                           Sender sender = new Sender(data, y);
+
+                        apiService.sendNotification(sender).enqueue(new Callback<Responce>() {
+                            @Override
+                            public void onResponse( Call<Responce> call, Response<Responce> response) {
+
+                                if (response.code() == 200) {
+
+
+                                    if (response.body().success != 1) {
+
+//                                        Toast.makeText(Personal_Chat_Activity.this, "Notification Failed !", Toast.LENGTH_SHORT).show();
+
+                                    }
+                                }
+                            }
+
+                            @Override
+                            public void onFailure(Call<Responce> call, Throwable t) {
+
+                            }
+                        });
+
+                    }
+
+
+        }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
 
     }
@@ -689,7 +803,7 @@ public class Personal_Chat_Activity extends AppCompatActivity {
 
         }
         else {
-            startActivity( new  Intent (this,LoginActivity.class));
+            startActivity( new  Intent (this, LoginActivity.class));
             Toast.makeText(this, ""+myUid+"  ", Toast.LENGTH_SHORT).show();
             Toast.makeText(this, ""+samnevaleuserkiUidget, Toast.LENGTH_SHORT).show();
             finish();

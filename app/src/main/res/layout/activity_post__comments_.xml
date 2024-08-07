@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -7,7 +8,6 @@
     app:cardCornerRadius="@dimen/two_Dimen"
     app:cardElevation="@dimen/two_Dimen"
     app:cardBackgroundColor="@color/cardview_white"
-    app:contentPadding="@dimen/one_Dimen"
     >
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarId"
@@ -31,17 +31,17 @@
         app:drawableStartCompat="@drawable/user_icon" />
 
 
-    <ImageView
-        android:id="@+id/postedImageOpenId"
-        android:layout_width="@dimen/four_hundred_Dimen"
-        android:layout_height="@dimen/four_hundred_Dimen"
-        android:background="#2E2D2D"
-        android:visibility="invisible"
-        android:layout_marginTop="?actionBarSize"
-        android:paddingTop="@dimen/thirty_Dimen"
-        android:paddingBottom="@dimen/ten_Dimen"
+<!--    <ImageView-->
+<!--        android:id="@+id/postedImageOpenId"-->
+<!--        android:layout_width="@dimen/four_hundred_Dimen"-->
+<!--        android:layout_height="@dimen/four_hundred_Dimen"-->
+<!--        android:background="#2E2D2D"-->
+<!--        android:visibility="invisible"-->
+<!--        android:layout_marginTop="?actionBarSize"-->
+<!--        android:paddingTop="@dimen/thirty_Dimen"-->
+<!--        android:paddingBottom="@dimen/ten_Dimen"-->
 
-        />
+<!--        />-->
 
     <ScrollView
         android:layout_width="match_parent"
@@ -71,11 +71,14 @@
             android:layout_marginTop="@dimen/five_Dimen"
 
             >
-            <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+
+            <ImageView
                 android:id="@+id/useriamgeS"
-                android:layout_width="@dimen/seventy_Dimen"
-                android:layout_height="@dimen/seventy_Dimen"
-                android:src="@drawable/user_icon"/>
+                android:layout_width="@dimen/sixty_Dimen"
+                android:layout_height="@dimen/sixty_Dimen"
+                android:scaleType="fitXY"
+                android:src="@drawable/user_icon"
+                android:contentDescription="@string/about"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -148,7 +151,7 @@
                 />
 
 
-            <ImageView
+            <com.zolad.zoominimageview.ZoomInImageView
                 android:id="@+id/postedImgaeId"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/two_hundred_Dimen"
@@ -186,7 +189,7 @@
                     android:paddingEnd="@dimen/ten_Dimen"
                     android:drawablePadding="@dimen/ten_Dimen"
                     app:drawableStartCompat="@drawable/ic_comment_icon"
-                    android:layout_weight="2"/>
+                    android:layout_weight="1.5"/>
 
 
 
@@ -209,6 +212,7 @@
                     android:layout_marginBottom="@dimen/three_Dimen"
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
+                    android:background="@drawable/rounded_btn"
                     android:drawableStart="@drawable/ic_like_icon"
 
                     />
@@ -218,12 +222,14 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/liketxt"
+                    android:textColor="@color/white"
                     android:layout_marginTop="@dimen/three_Dimen"
                     android:layout_marginBottom="@dimen/three_Dimen"
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
                     android:drawableStart="@drawable/ic_liked_icon"
-
+                    android:drawableTint="@color/white"
+                    android:background="@drawable/rounded_btn_main"
                     />
 
                 <Button
@@ -237,7 +243,7 @@
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
                     android:drawableStart="@drawable/ic_comment_2"
-
+                    android:background="@drawable/rounded_btn"
                     />
 
 
@@ -246,21 +252,34 @@
 
         </LinearLayout>
 
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/dark_grey">
+
         <TextView
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/thirty_five_Dimen"
-        android:text="@string/commenttxt"
-        android:textColor="@color/black"
-        android:drawablePadding="@dimen/ten_Dimen"
-        android:background="@color/red"
-        android:padding="@dimen/five_Dimen"
-        android:textSize="@dimen/twenty_SP_Dimen"
-        app:drawableStartCompat="@drawable/ic_comment_2" />
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/thirty_five_Dimen"
+            android:text="@string/commenttxt"
+            android:textColor="@color/white"
+            android:drawablePadding="@dimen/ten_Dimen"
+            android:padding="@dimen/five_Dimen"
+            android:paddingStart="@dimen/ten_Dimen"
+            android:textSize="@dimen/twenty_SP_Dimen"
+            app:drawableStartCompat="@drawable/ic_comment_2"
+            tools:ignore="RtlSymmetry"
+            app:drawableTint="@color/white"
+            android:layout_centerHorizontal="true"
+            />
+
+        </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/post_recycleerView_show_comment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="@dimen/three_hundred_twenty_Dimen"
 
             />
 

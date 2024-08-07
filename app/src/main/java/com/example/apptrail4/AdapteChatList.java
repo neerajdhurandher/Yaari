@@ -126,7 +126,7 @@ public class AdapteChatList extends  RecyclerView.Adapter<AdapteChatList.ChatLis
        holder.itemView.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent gotochat = new Intent(context,Personal_Chat_Activity.class);
+               Intent gotochat = new Intent(context, Personal_Chat_Activity.class);
                 gotochat.putExtra("samnevaleuserkiUid",samnevalekiUID);
                 context.startActivity(gotochat);
            }
