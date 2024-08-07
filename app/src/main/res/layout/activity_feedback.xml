@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/alreadyacc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:background="#F0F1F3"
+    tools:context=".FeedbackActivity">
+
+    <RelativeLayout
+        android:id="@+id/thanks_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:visibility="gone"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/one_hundred_Dimen"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/thirty_five_Dimen"
+            android:layout_marginTop="@dimen/three_hundred_Dimen"
+            android:padding="@dimen/ten_Dimen"
+            android:text="@string/thankyou_for_your_feedback_txt"
+            android:textColor="@color/cardview_white"
+            android:textSize="@dimen/thirty_SP_Dimen" />
+
+
+    </RelativeLayout>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarId"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/toolbarstyle" />
+
+
+    <LinearLayout
+        android:id="@+id/feedback_form_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:text="@string/app_name"
+            android:textColor="#000"
+            android:textSize="@dimen/thirty_SP_Dimen"
+            android:paddingStart="@dimen/ten_Dimen"
+            android:paddingEnd="@dimen/zero_Dimen"
+            android:drawablePadding="@dimen/ten_Dimen"
+            app:drawableStartCompat="@drawable/user_icon" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/zero_Dimen"
+            android:background="@color/red"
+            android:layout_marginTop="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/one_Dimen"
+            android:layout_marginStart="@dimen/thirty_Dimen"
+            android:layout_marginEnd="@dimen/thirty_Dimen"
+            android:text="@string/feedback_txt"
+            android:textSize="@dimen/thirty_SP_Dimen"
+            android:textStyle="bold"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/three_Dimen"
+            android:paddingBottom="@dimen/three_Dimen"
+            android:background="#3A3939"
+            android:layout_marginTop="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/one_Dimen"
+            android:text="@string/neeraj_dev_txt"
+            android:textSize="@dimen/twenty_SP_Dimen"
+            android:textColor="@color/cardview_white"
+            android:gravity="center"
+
+
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/five_Dimen"
+            android:layout_marginBottom="@dimen/zero_Dimen"
+            android:paddingTop="@dimen/two_Dimen"
+            android:paddingBottom="@dimen/five_Dimen">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/how_was_your_experience_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="#4B85F8"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/five_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/five_Dimen"
+                        />
+
+                    <EditText
+                        android:id="@+id/experience_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/eighty_Dimen"
+                        android:hint="@string/write_here_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="@drawable/coustem_input"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/four_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/two_Dimen"
+                        android:paddingTop="@dimen/two_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+
+                        />
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/what_you_like_in_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="#4B85F8"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/five_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/five_Dimen"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/like_aboutapp_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/eighty_Dimen"
+                        android:hint="@string/write_here_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="@drawable/coustem_input"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/four_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/two_Dimen"
+                        android:paddingTop="@dimen/two_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        />
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/report_any_bug_or_error_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="#4B85F8"
+                        android:textStyle="bold"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/five_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/five_Dimen"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/bug_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/eighty_Dimen"
+                        android:hint="@string/write_here_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="@drawable/coustem_input"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/four_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/two_Dimen"
+                        android:paddingTop="@dimen/two_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        />
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/five_Dimen"
+                        android:background="#4B85F8"
+                        android:textStyle="bold"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/five_Dimen"
+                        android:text="@string/suggestions_for_new_features_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+
+                        />
+
+                    <EditText
+                        android:id="@+id/suggestion_Id"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/eighty_Dimen"
+                        android:hint="@string/write_here_txt"
+                        android:textSize="@dimen/twenty_SP_Dimen"
+                        android:background="@drawable/coustem_input"
+                        android:layout_marginStart="@dimen/ten_Dimen"
+                        android:layout_marginEnd="@dimen/ten_Dimen"
+                        android:layout_marginTop="@dimen/ten_Dimen"
+                        android:layout_marginBottom="@dimen/four_Dimen"
+                        android:paddingStart="@dimen/five_Dimen"
+                        android:paddingEnd="@dimen/two_Dimen"
+                        android:paddingTop="@dimen/two_Dimen"
+                        android:paddingBottom="@dimen/two_Dimen"
+                        />
+
+
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/submmit_btn_Id"
+                    android:layout_width="@dimen/one_hundred_Dimen"
+                    android:layout_height="@dimen/sixty_Dimen"
+                    android:layout_gravity="bottom|end"
+                    android:layout_marginTop="@dimen/ten_Dimen"
+                    android:layout_marginBottom="@dimen/ten_Dimen"
+                    android:layout_marginEnd="@dimen/twenty_Dimen"
+                    android:textStyle="bold"
+                    android:text="@string/submmit_txt"
+                    android:textSize="@dimen/twenty_SP_Dimen"
+                    android:background="@color/green"
+                    />
+
+
+
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>
