@@ -5,9 +5,11 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.text.format.DateFormat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +42,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Locale;
@@ -199,8 +203,11 @@ public class new_post_frg extends Fragment {
 
                 aboutPhoto_String = txtaboutphoto.getText().toString();
 
-                uploadPost(aboutPhoto_String,String.valueOf(uploadImageURI));
-
+                try {
+                    uploadPost(aboutPhoto_String,uploadImageURI);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
 
             }
@@ -218,7 +225,7 @@ public class new_post_frg extends Fragment {
 
 
 
-    private void uploadPost(final String aboutPhoto_string, String uri) {
+    private void uploadPost(final String aboutPhoto_string, Uri uri)  throws IOException  {
 
         pd.setMessage("Publishing...");
         pd.show();
@@ -228,9 +235,15 @@ public class new_post_frg extends Fragment {
         String filepathAndname = "Posts/"+ "post_"+ currentUserUID +"_"+ timestamp;
         // we can add currentuser name in filename for better underastanding  and file handleling
 
+        Bitmap image_bitmap = MediaStore.Images.Media.getBitmap(this.getActivity().getContentResolver(),uri);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        image_bitmap.compress(Bitmap.CompressFormat.PNG,30,baos);
+        byte[] bytes_data = baos.toByteArray();
+
         StorageReference post_storageReference = FirebaseStorage.getInstance().getReference().child(filepathAndname);
 
-        post_storageReference.putFile(Uri.parse(uri)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+        post_storageReference.putBytes(bytes_data)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
@@ -245,7 +258,7 @@ public class new_post_frg extends Fragment {
 
                     hashMap_post.put("uName",currentUser.getDisplayName());
                     hashMap_post.put("uEmail",currentUser.getEmail());
-                    hashMap_post.put("uid",currentUser.getUid());
+                    hashMap_post.put("uid",currentUserUID);
                     hashMap_post.put("uImage",currentUser.getPhotoUrl().toString());
                     hashMap_post.put("pDate_Time",timestamp);
                     hashMap_post.put("caption",aboutPhoto_string);
@@ -254,6 +267,12 @@ public class new_post_frg extends Fragment {
                     hashMap_post.put("uBio",bio_get);
 
                     DatabaseReference databaseReference_post = FirebaseDatabase.getInstance().getReference("Posts");
+                    DatabaseReference databaseReference_post_in_user_node = FirebaseDatabase.getInstance().getReference("Users").child(currentUserUID);
+
+                    // add post_in_user_node
+                    databaseReference_post_in_user_node.child(timestamp+"_"+currentUserUID).setValue(hashMap_post);
+
+                    // add in post node
 
                     databaseReference_post.child(timestamp+"_"+currentUserUID).setValue(hashMap_post).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -262,7 +281,7 @@ public class new_post_frg extends Fragment {
                             Toast.makeText(getActivity(), "Post Published", Toast.LENGTH_SHORT).show();
 
 
-                            Intent updateandgohome = new Intent(getActivity(),HomeActivity.class);
+                            Intent updateandgohome = new Intent(getActivity(), HomeActivity.class);
                             startActivity(updateandgohome);
 
 

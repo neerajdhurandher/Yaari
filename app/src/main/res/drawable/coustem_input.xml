@@ -16,7 +16,7 @@
         <solid android:color="@android:color/white"/>
         <corners android:radius="@dimen/fifteen_Dimen"/>
         <stroke
-            android:width="@dimen/two_dip_Dimen"
+            android:width="@dimen/one_Dimen"
             android:color="@android:color/background_dark"/>
 
     </shape>

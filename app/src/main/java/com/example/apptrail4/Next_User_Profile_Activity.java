@@ -34,7 +34,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
     ImageView personDp;
     TextView usernameD, bioD,nameD,emailD,dobD,instrestD,relationshipD,cityD;
     TextView followerS , posts;
-    Button back_btn,acceptFollowReqbtn,declineFollowReqbtn,followbtn;
+    Button back_btn,acceptFollowReqbtn,declineFollowReqbtn,followbtn,unfollowbtn;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseUser currentUser;
@@ -76,12 +76,16 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
         acceptFollowReqbtn = findViewById(R.id.AcceptFollowReqbtn);
         declineFollowReqbtn = findViewById(R.id.DeclineFollowReqbtn);
         followbtn = findViewById(R.id.sendFRbtn);
+        unfollowbtn = findViewById(R.id.unfollowbtn);
 
 
         acceptFollowReqbtn.setVisibility(View.INVISIBLE);
         acceptFollowReqbtn.setEnabled(false);
         declineFollowReqbtn.setVisibility(View.INVISIBLE);
         declineFollowReqbtn.setEnabled(false);
+        unfollowbtn.setVisibility(View.INVISIBLE);
+        unfollowbtn.setEnabled(false);
+
 
 
         // get Intent
@@ -95,6 +99,9 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
         currentUser_database = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserUid);
         next_person_datbase = FirebaseDatabase.getInstance().getReference().child("Users").child(nextPersonUid);
 
+
+
+        // fetch next person follower count
         next_person_datbase.child("Follower").addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override
@@ -120,7 +127,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
 //          check Following Status
 
-        currentUser_database.addListenerForSingleValueEvent(new ValueEventListener() {
+        currentUser_database.addValueEventListener(new ValueEventListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -137,19 +144,24 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
 
 
-
-//                        followbtn.setVisibility(View.INVISIBLE);
-//                        followbtn.setEnabled(false);
-
                         acceptFollowReqbtn.setVisibility(View.VISIBLE);
                         acceptFollowReqbtn.setEnabled(true);
                         declineFollowReqbtn.setVisibility(View.VISIBLE);
                         declineFollowReqbtn.setEnabled(true);
+
                         acceptFollowReqbtn.setText("Chat");
                         declineFollowReqbtn.setText("Following");
-                        followbtn.setText("UnFollow");
 
-                        acceptFollowReqbtn.setCompoundDrawables(Drawable.createFromPath("chat_icon"),null,null,null);
+
+                        followbtn.setVisibility(View.GONE);
+                        followbtn.setEnabled(false);
+                        unfollowbtn.setVisibility(View.VISIBLE);
+                        unfollowbtn.setEnabled(true);
+
+
+                        @SuppressLint("UseCompatLoadingForDrawables") Drawable myDrawable = getApplicationContext().getResources().getDrawable(R.drawable.chat_icon);
+
+                        acceptFollowReqbtn.setCompoundDrawablesWithIntrinsicBounds(myDrawable,null,null,null);
                         declineFollowReqbtn.setCompoundDrawables(null,null,null,null);
 
 
@@ -157,13 +169,16 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
                         acceptFollowReqbtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent gotochat = new Intent(Next_User_Profile_Activity.this,Personal_Chat_Activity.class);
+
+                               //  accept follow button convert in chat button & on click that go to chat
+
+                                Intent gotochat = new Intent(Next_User_Profile_Activity.this, Personal_Chat_Activity.class);
                                 gotochat.putExtra("samnevaleuserkiUid",nextPersonUid);
                                 startActivity(gotochat);
                             }
                         });
 
-                        followbtn.setOnClickListener(new View.OnClickListener() {
+                        unfollowbtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
@@ -216,9 +231,6 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
                         });
 
                     }
-
-
-
             }
             }
 
@@ -230,7 +242,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
 
 
-
+      // fetch next person data
         next_person_datbase.addValueEventListener(new ValueEventListener() {
              @SuppressLint("SetTextI18n")
              @Override
@@ -338,38 +350,50 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
 
 
+
+
     }
+
+
 
     @SuppressLint("SetTextI18n")
     private void unFollow() {
 
-        //delete node to Follow_Req_Send node in Current User profile
-
         currentUser_database.child("Follower").child(nextPersonUid).removeValue();
         next_person_datbase.child("Follower").child(currentUserUid).removeValue();
 
-        followbtn.setText("Follow");
+
+
+
         followbtn.setVisibility(View.VISIBLE);
         followbtn.setEnabled(true);
+
+        unfollowbtn.setVisibility(View.GONE);
+        unfollowbtn.setEnabled(false);
+
         acceptFollowReqbtn.setVisibility(View.INVISIBLE);
         declineFollowReqbtn.setVisibility(View.INVISIBLE);
 
-        followbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SendFollowRequest();
-            }
-        });
+//        followbtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                SendFollowRequest();
+//            }
+//        });
     }
+
 
     private void decline_Follow_Req() {
 
+        // delete current user node from next user's req send node
 
-        //delete node to Follow_Req_Pending node in Next person profile
-        //delete node to Follow_Req_Send node in Current User profile
+        next_person_datbase.child("Follow_Req_Sends").child(currentUserUid).removeValue();
 
-        currentUser_database.child("Follow_Req_Sends").child(nextPersonUid).removeValue();
-        next_person_datbase.child("Follow_Req_Pending").child(currentUserUid).removeValue();
+        //delete next user node from current user's req pending node
+
+        currentUser_database.child("Follow_Req_Pending").child(nextPersonUid).removeValue();
+
+
 
         followbtn.setVisibility(View.VISIBLE);
         followbtn.setEnabled(true);
@@ -384,6 +408,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
         });
 
     }
+
 
     private void accept_Follow_Req() {
 
@@ -403,7 +428,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
 
 
-        next_person_datbase.addValueEventListener(new ValueEventListener() {
+        next_person_datbase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -416,7 +441,34 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
                 currentUser_database.child("Follower").child(nextPersonUid).child("displayname").setValue(disname);
                 currentUser_database.child("Follower").child(nextPersonUid).child("email").setValue(emailtxt);
                 currentUser_database.child("Follower").child(nextPersonUid).child("uid").setValue(nextPersonUid);
-                currentUser_database.child("Follower").child(nextPersonUid).child("image").setValue(nextPersonDpStr);
+                currentUser_database.child("Follower").child(nextPersonUid).child("image").setValue(nextPersonDpStr).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+
+                        currentUser_database.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                String disname = "" + snapshot.child("displayname").getValue();
+                                String emailtxt = "" + snapshot.child("email").getValue();
+                                String nextPersonDpStr =  "" + snapshot.child("image").getValue();
+
+
+                                next_person_datbase.child("Follower").child(currentUserUid).child("displayname").setValue(disname);
+                                next_person_datbase.child("Follower").child(currentUserUid).child("email").setValue(emailtxt);
+                                next_person_datbase.child("Follower").child(currentUserUid).child("uid").setValue(currentUserUid);
+                                next_person_datbase.child("Follower").child(currentUserUid).child("image").setValue(nextPersonDpStr);
+
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });
+
+                    }
+                });
 
 
             }
@@ -431,40 +483,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
 
 
-      currentUser_database.addValueEventListener(new ValueEventListener() {
-          @Override
-          public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-              String disname = "" + snapshot.child("displayname").getValue();
-              String emailtxt = "" + snapshot.child("email").getValue();
-              String nextPersonDpStr =  "" + snapshot.child("image").getValue();
-
-
-              next_person_datbase.child("Follower").child(currentUserUid).child("displayname").setValue(disname);
-              next_person_datbase.child("Follower").child(currentUserUid).child("email").setValue(emailtxt);
-              next_person_datbase.child("Follower").child(currentUserUid).child("uid").setValue(currentUserUid);
-              next_person_datbase.child("Follower").child(currentUserUid).child("image").setValue(nextPersonDpStr);
-
-          }
-
-          @Override
-          public void onCancelled(@NonNull DatabaseError error) {
-
-          }
-      });
-
-
-
-
-
-
-
-
-        //delete node to Follow_Req_Pending node in Next person profile
-        //delete node to Follow_Req_Send node in Current User profile
-
-        currentUser_database.child("Follow_Req_Pending").child(nextPersonUid).removeValue();
-        next_person_datbase.child("Follow_Req_Sends").child(currentUserUid).removeValue();
 
         //      Add in Follower list of both user
 
@@ -481,19 +500,42 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
                 setValue(currentDateTime);
 
 
+        // delete current user node from next user's req send node
+
+        next_person_datbase.child("Follow_Req_Sends").child(currentUserUid).removeValue();
+
+        //delete next user node from current user's req pending node
+
+        currentUser_database.child("Follow_Req_Pending").child(nextPersonUid).removeValue();
 
 
 
 
 
-        followbtn.setVisibility(View.INVISIBLE);
-        followbtn.setText("Unfollow");
-        followbtn.setEnabled(true);
+
+
+        followbtn.setVisibility(View.GONE);
+        followbtn.setEnabled(false);
+
+        unfollowbtn.setVisibility(View.VISIBLE);
+        unfollowbtn.setEnabled(true);
+
+        @SuppressLint("UseCompatLoadingForDrawables") Drawable myDrawable = getApplicationContext().getResources().getDrawable(R.drawable.chat_icon);
+
+        acceptFollowReqbtn.setCompoundDrawablesWithIntrinsicBounds(myDrawable,null,null,null);
+        declineFollowReqbtn.setCompoundDrawables(null,null,null,null);
 
         acceptFollowReqbtn.setText("Chat");
         declineFollowReqbtn.setText("Following");
         declineFollowReqbtn.setEnabled(false);
 
+        unfollowbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                unFollow();
+            }
+        });
 
         acceptFollowReqbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -503,10 +545,6 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
                 startActivity(gotochat);
             }
         });
-
-
-
-
 
 
 
@@ -523,7 +561,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
-                    next_person_datbase.addValueEventListener(new ValueEventListener() {
+                    next_person_datbase.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
 
@@ -556,7 +594,7 @@ public class Next_User_Profile_Activity extends AppCompatActivity {
 
                          if (task.isSuccessful()){
 
-                             currentUser_database.addValueEventListener(new ValueEventListener() {
+                             currentUser_database.addListenerForSingleValueEvent(new ValueEventListener() {
                                  @Override
                                  public void onDataChange(@NonNull DataSnapshot snapshot) {
 

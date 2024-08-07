@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:state_enabled="true">
-        <shape android:shape="rectangle">
-
-            <corners android:radius="@dimen/thirteen_Dimen"/>
+    <item android:state_enabled="true"  >
+        <shape android:shape="rectangle" android:tint="#F8F6F3F3" >
+            <corners android:radius="@dimen/three_Dimen"/>
             <stroke
-                android:width="@dimen/two_dip_Dimen"
+                android:width="@dimen/zero_Dimen"
                 android:color="@android:color/background_dark"/>
-
-
         </shape>
     </item>
 

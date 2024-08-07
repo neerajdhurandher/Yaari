@@ -6,28 +6,37 @@
     android:layout_height="match_parent"
     android:background="#E3DDDD"
     tools:context=".Personal_Chat_Activity">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/chat_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:background="@color/colorPrimaryDark"
-        >
+        android:background="@color/dark_blue">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/dark_blue"
+            android:src="@drawable/ic_arrow_back_24"
+            android:tint="@color/white"
+            android:layout_marginStart="@dimen/zero_Dimen"
+            android:layout_marginEnd="@dimen/ten_Dimen"/>
+
         <com.blogspot.atifsoftwares.circularimageview.CircularImageView
+            android:id="@+id/samnevalekadp_id"
             android:layout_width="@dimen/thirty_five_Dimen"
             android:layout_height="@dimen/thirty_five_Dimen"
             android:scaleType="centerCrop"
-            android:src="@drawable/user_icon"
-            android:background="@color/colorPrimaryDark"
-            android:id="@+id/samnevalekadp_id"
-            />
+            android:src="@drawable/user_icon" />
+
         <LinearLayout
             android:id="@+id/samnevale_ka_details_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/thirty_Dimen"
-            android:orientation="vertical"
             android:layout_marginBottom="@dimen/five_Dimen"
-            >
+            android:orientation="vertical">
+
             <TextView
                 android:id="@+id/samnevalekanaam_id"
                 android:layout_width="match_parent"
@@ -57,9 +66,9 @@
         android:id="@+id/chat_recycleview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chat_toolbar"
         android:layout_above="@+id/msgtype"
-        />
+        android:layout_below="@+id/chat_toolbar"
+        android:background="@drawable/chat_bg_final" />
 
 
     <LinearLayout
@@ -67,7 +76,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="#fff"
+        android:background="@drawable/top_round_bg"
         android:gravity="center"
         android:orientation="horizontal"
 

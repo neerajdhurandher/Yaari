@@ -78,11 +78,8 @@ public class Story_seen_users_Activity extends AppCompatActivity {
                 ModelUser modelUser = ds.getValue(ModelUser.class);
 
                 if(modelUser.getUid().equals(current_User_UID)){
-
-
                     modelUser.setDisplayname("You");
                     modelUser.setImage(currentUseer.getPhotoUrl().toString());
-
                 }
 
 

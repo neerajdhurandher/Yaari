@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,14 +49,14 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
 
     @NonNull
     @Override
-    public Adapter_Pnd_Foll_Req.frpuserViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public frpuserViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
         View view = LayoutInflater.from(context).inflate(R.layout.row_req_pending_users, viewGroup,false);
-        return new Adapter_Pnd_Foll_Req.frpuserViewHolder(view) ;
+        return new frpuserViewHolder(view) ;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final Adapter_Pnd_Foll_Req.frpuserViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull final frpuserViewHolder holder, int i) {
 
 
         //fetch data
@@ -77,7 +78,14 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
 
 
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+
+        final String Next_Person_Uid = userUid;
+        currentUser_database = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserUID);
+        next_person_datbase = FirebaseDatabase.getInstance().getReference().child("Users").child(Next_Person_Uid);
+
+
+
+        holder.userdetails_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -85,8 +93,9 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
 
 
                 String Next_Person_Uid = userUid;
-                Intent gotoNextPersonProfile = new Intent(context,Next_User_Profile_Activity.class);
+                Intent gotoNextPersonProfile = new Intent(context, Next_User_Profile_Activity.class);
                 gotoNextPersonProfile.putExtra("Next_Person_Uid_Var",Next_Person_Uid);
+                gotoNextPersonProfile.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(gotoNextPersonProfile);
 
             }
@@ -97,11 +106,7 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
             public void onClick(View v) {
 
 
-                final String Next_Person_Uid = userUid;
-                currentUser_database = FirebaseDatabase.getInstance().getReference().child("Users").child(currentUserUID);
-                next_person_datbase = FirebaseDatabase.getInstance().getReference().child("Users").child(Next_Person_Uid);
-
-
+                Toast.makeText(context, "Accepted", Toast.LENGTH_SHORT).show();
 
                 Calendar calDate = Calendar.getInstance();
                 @SuppressLint("SimpleDateFormat") SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MM-yyyy");
@@ -112,6 +117,9 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
                 String currentTime = timeFormate.format(calTime.getTime());
 
                 String currentDateTime = currentDate+" "+currentTime;
+
+
+
 
                 next_person_datbase.addValueEventListener(new ValueEventListener() {
                     @Override
@@ -139,8 +147,6 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
 
 
 
-
-
                 currentUser_database.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -163,11 +169,7 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
                     }
                 });
 
-                //delete node to Follow_Req_Pending node in Next person profile
-                //delete node to Follow_Req_Send node in Current User profile
 
-                currentUser_database.child("Follow_Req_Pending").child(Next_Person_Uid).removeValue();
-                next_person_datbase.child("Follow_Req_Sends").child(currentUserUID).removeValue();
 
                 //      Add in Follower list of both user
 
@@ -183,6 +185,14 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
                 next_person_datbase.child("Follower").child(currentUserUID).child("Date & Time").
                         setValue(currentDateTime);
 
+                //delete node to Follow_Req_Pending node in Next person profile
+
+                currentUser_database.child("Follow_Req_Pending").child(Next_Person_Uid).removeValue();
+
+                //delete node to Follow_Req_Send node in Current User profile
+
+                next_person_datbase.child("Follow_Req_Sends").child(currentUserUID).removeValue();
+
 
 
             }
@@ -194,8 +204,15 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
 
                 String Next_Person_Uid = userUid;
 
-                currentUser_database.child("Follow_Req_Sends").child(Next_Person_Uid).removeValue();
-                next_person_datbase.child("Follow_Req_Pending").child(currentUserUID).removeValue();
+                Toast.makeText(context, "Accepted", Toast.LENGTH_SHORT).show();
+
+                //delete node to Follow_Req_Pending node in Next person profile
+
+                currentUser_database.child("Follow_Req_Pending").child(Next_Person_Uid).removeValue();
+
+                //delete node to Follow_Req_Send node in Current User profile
+
+                next_person_datbase.child("Follow_Req_Sends").child(currentUserUID).removeValue();
 
 
 
@@ -212,10 +229,12 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
         return userList.size();
     }
 
+
     class frpuserViewHolder extends RecyclerView.ViewHolder{
         ImageView userImageA;
         TextView usernameA,useremailA;
         Button acceptbtn,declinrbtn;
+        LinearLayout userdetails_layout;
 
 
         public frpuserViewHolder(@NonNull View itemView) {
@@ -226,6 +245,10 @@ public class Adapter_Pnd_Foll_Req extends RecyclerView.Adapter<Adapter_Pnd_Foll_
             useremailA = itemView.findViewById(R.id.useremailS);
             acceptbtn = itemView.findViewById(R.id.acceptbtnid);
             declinrbtn= itemView.findViewById(R.id.declinebtnid);
+            userdetails_layout= itemView.findViewById(R.id.userdetails_layout);
+
+            acceptbtn.setEnabled(true);
+            declinrbtn.setEnabled(true);
 
 
 

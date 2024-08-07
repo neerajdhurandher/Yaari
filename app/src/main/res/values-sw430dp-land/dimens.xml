@@ -63,4 +63,5 @@
 	<dimen name="one_hundred_sixty_Dimen">214.9dp</dimen>
 	<dimen name="fifty_negative_Dimen">-67.2dp</dimen>
 	<dimen name="ten_negative_Dimen">-13.4dp</dimen>
+	<dimen name="seventy_five_Dimen">100.7dp</dimen>
 </resources>

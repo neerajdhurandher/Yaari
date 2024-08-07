@@ -25,8 +25,8 @@
             >
             <com.blogspot.atifsoftwares.circularimageview.CircularImageView
                 android:id="@+id/useriamgeS"
-                android:layout_width="@dimen/forty_two_Dimen"
-                android:layout_height="@dimen/forty_two_Dimen"
+                android:layout_width="@dimen/fifty_Dimen"
+                android:layout_height="@dimen/fifty_five_Dimen"
                 android:src="@drawable/user_icon"/>
 
             <LinearLayout
@@ -42,16 +42,16 @@
                 android:layout_marginTop="@dimen/two_Dimen"
                 android:text="@string/name"
                 android:textColor="#000"
-                android:textSize="@dimen/twenty_SP_Dimen"
+                android:textSize="@dimen/sixteen_SP_Dimen"
                 />
 
                 <TextView
                     android:id="@+id/comment_time"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="@string/timestamp"
                     android:textColor="@color/gery"
-                    android:paddingBottom="@dimen/zero_Dimen"
+
 
                     />
             </LinearLayout>

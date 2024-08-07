@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.apptrail4.notification.Token;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -19,6 +20,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -99,17 +101,33 @@ public class chat_frg extends Fragment {
             }
         });
 
-//        goto_follower_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent goto_follower_intent = new Intent(getActivity(),Follower_Activity.class);
-//                startActivity(goto_follower_intent);
-//            }
-//        });
+        updateToken(FirebaseInstanceId.getInstance().getToken());
+
+
+        goto_follower_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goto_follower_intent = new Intent(getActivity(), Follower_Activity.class);
+                startActivity(goto_follower_intent);
+            }
+        });
+
+
 
 
         return view;
     }
+
+    private void updateToken(String token){
+
+
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("Tokens");
+        Token token1 = new Token(token);
+        databaseRef.child(myUid).setValue(token);
+
+    }
+
+
 
     private void loadChat() {
 
@@ -216,7 +234,7 @@ public class chat_frg extends Fragment {
 
         }
         else {
-            startActivity(new Intent(getActivity(),MainActivity.class));
+            startActivity(new Intent(getActivity(), FeedbackActivity.class));
             getActivity().finish();
 
 

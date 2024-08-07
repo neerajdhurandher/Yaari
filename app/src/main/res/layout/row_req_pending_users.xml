@@ -11,7 +11,8 @@
     >
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/userdetails_layout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
 
@@ -23,7 +24,7 @@
             android:src="@drawable/user_icon"/>
 
         <LinearLayout
-            android:layout_width="@dimen/two_hundred_Dimen"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/ten_Dimen"
             android:layout_marginEnd="@dimen/twenty_Dimen"
@@ -31,7 +32,7 @@
             >
             <TextView
                 android:id="@+id/usernameS"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/five_Dimen"
                 android:text="@string/name"
@@ -41,7 +42,7 @@
 
             <TextView
                 android:id="@+id/useremailS"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/five_Dimen"
                 android:text="@string/email"
@@ -51,11 +52,15 @@
 
         </LinearLayout>
 
-       <LinearLayout
+
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/five_Dimen"
         android:orientation="vertical"
+        android:layout_gravity="end"
 
         >
 
@@ -69,7 +74,8 @@
             android:layout_marginEnd="@dimen/five_Dimen"
             android:text="@string/declinebtn"
             android:textAlignment="center"
-            android:background="#F65959"
+            android:background="@drawable/rounded_btn_danger"
+            android:textColor="@color/white"
 
             />
         <Button
@@ -83,13 +89,12 @@
             android:text="@string/acceptbtn"
             android:textAlignment="center"
             android:textSize="@dimen/fifteen_SP_Dimen"
-            android:background="#5D78E8"
+            android:background="@drawable/rounded_btn_main"
+            android:textColor="@color/white"
 
             />
 
     </LinearLayout>
 
-
-    </LinearLayout>
 
 </androidx.cardview.widget.CardView>

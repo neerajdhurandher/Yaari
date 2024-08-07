@@ -38,6 +38,7 @@
     <dimen name="sixty_Dimen">60dp</dimen>
 
     <dimen name="seventy_Dimen">70dp</dimen>
+    <dimen name="seventy_five_Dimen">75dp</dimen>
     <dimen name="eighty_Dimen">80dp</dimen>
     <dimen name="eighty_seven_Dimen">87dp</dimen>
 
@@ -86,11 +87,8 @@
     <dimen name="two_dip_Dimen">2dip</dimen>
     <dimen name="three_dip_Dimen">3dip</dimen>
     <dimen name="five_dip_Dimen">5dip</dimen>
-
-
-
-
-
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
 
 
 </resources>

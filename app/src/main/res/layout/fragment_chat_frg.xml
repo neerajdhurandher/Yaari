@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".chat_frg"
-    android:background="#BCB5B5">
+    android:background="#4A4747"
+    >
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -27,37 +28,48 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
-        android:drawablePadding="@dimen/twenty_Dimen"
+        android:drawablePadding="@dimen/ten_Dimen"
+        android:paddingTop="@dimen/five_Dimen"
         android:paddingStart="@dimen/twenty_Dimen"
         android:paddingEnd="@dimen/zero_Dimen"
         android:text="@string/chat_headline"
-        android:textColor="#000"
+        android:textColor="@color/colorPrimary"
         android:textSize="@dimen/thirty_five_SP_Dimen"
-        app:drawableStartCompat="@drawable/chat_icon" />
+        app:drawableStartCompat="@drawable/chat_icon"
+        app:drawableTint="@color/colorPrimary" />
 
         <RelativeLayout
             android:id="@+id/no_chat_view_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="?actionBarSize"
-            android:layout_marginBottom="@dimen/sixty_Dimen"
+            android:background="@color/white"
+
+
             >
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/two_hundred_Dimen"
-                android:background="@color/green"
                 android:layout_marginEnd="@dimen/twenty_Dimen"
                 android:layout_marginStart="@dimen/twenty_Dimen"
-                android:layout_marginTop="@dimen/one_hundred_forty_Dimen"/>
+                android:layout_marginTop="@dimen/one_hundred_forty_Dimen"
+                android:src="@drawable/lets_talk_final"
+                />
 
             <Button
                 android:id="@+id/goto_follower_Id"
-                android:layout_width="@dimen/one_hundred_Dimen"
-                android:layout_height="@dimen/one_hundred_Dimen"
-                android:layout_marginStart="@dimen/three_hundred_Dimen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
                 android:layout_marginTop="@dimen/four_hundred_Dimen"
-                android:text="@string/chat_to_yaar_txt" />
+                android:layout_marginEnd="@dimen/ten_Dimen"
+                android:layout_marginBottom="@dimen/twenty_Dimen"
+                android:background="@drawable/rounded_btn_main"
+                android:paddingStart="@dimen/twenty_Dimen"
+                android:paddingEnd="@dimen/twenty_Dimen"
+                android:text="@string/chat_to_yaar_txt"
+                android:textColor="@color/white" />
 
         </RelativeLayout>
 

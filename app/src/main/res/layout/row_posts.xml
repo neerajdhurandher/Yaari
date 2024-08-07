@@ -6,28 +6,33 @@
     app:cardUseCompatPadding="true"
     app:cardCornerRadius="@dimen/fifteen_Dimen"
     app:cardElevation="@dimen/two_Dimen"
-    app:cardBackgroundColor="#CAC0C0"
     app:contentPadding="@dimen/two_Dimen"
+    app:cardBackgroundColor="#070707"
     >
 
 
-        <ImageView
-            android:id="@+id/postedImageOpenId"
-            android:layout_width="@dimen/four_hundred_Dimen"
-            android:layout_height="@dimen/six_hundred_Dimen"
-            android:background="#2E2D2D"
-            android:paddingTop="@dimen/twenty_five_Dimen"
-            android:layout_marginBottom="@dimen/twenty_Dimen"
-            android:paddingStart="@dimen/zero_Dimen"
-            android:paddingEnd="@dimen/zero_Dimen"
-            android:visibility="invisible"
-            />
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/postedImageOpenId"-->
+<!--            android:layout_width="@dimen/four_hundred_Dimen"-->
+<!--            android:layout_height="@dimen/six_hundred_Dimen"-->
+<!--            android:background="#2E2D2D"-->
+<!--            android:paddingTop="@dimen/twenty_five_Dimen"-->
+<!--            android:layout_marginBottom="@dimen/twenty_Dimen"-->
+<!--            android:paddingStart="@dimen/zero_Dimen"-->
+<!--            android:paddingEnd="@dimen/zero_Dimen"-->
+<!--            android:visibility="invisible"-->
+<!--            android:adjustViewBounds="true"-->
+<!--            android:scaleType="fitCenter"-->
+<!--            />-->
 
     <LinearLayout
         android:id="@+id/post_Layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#D6D6D6"
         >
 
 
@@ -61,6 +66,7 @@
                     android:text="@string/name"
                     android:textColor="#000"
                     android:textSize="@dimen/sixteen_SP_Dimen"
+                    android:textStyle="bold"
                     />
 
                 <TextView
@@ -70,7 +76,7 @@
                     android:layout_marginTop="@dimen/two_Dimen"
                     android:layout_marginBottom="@dimen/zero_Dimen"
                     android:text="@string/bioS"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/cardview_white"
 
                     />
 
@@ -82,7 +88,7 @@
                     android:layout_marginTop="@dimen/two_Dimen"
                     android:layout_marginBottom="@dimen/zero_Dimen"
                     android:text="@string/timestamp"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/cardview_white"
 
                     />
 
@@ -117,13 +123,21 @@
                 />
 
 
-            <ImageView
+<!--            <ImageView-->
+<!--                android:id="@+id/postedImgaeId"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/three_hundred_Dimen"-->
+<!--                android:layout_marginTop="@dimen/five_Dimen"-->
+<!--                android:layout_marginBottom="@dimen/five_Dimen"-->
+<!--                android:minHeight="@dimen/one_hundred_forty_four_Dimen"-->
+<!--                />-->
+            <com.zolad.zoominimageview.ZoomInImageView
                 android:id="@+id/postedImgaeId"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/three_hundred_Dimen"
                 android:layout_marginTop="@dimen/five_Dimen"
                 android:layout_marginBottom="@dimen/five_Dimen"
-                android:minHeight="@dimen/one_hundred_forty_four_Dimen"
+                android:minHeight="@dimen/one_hundred_sixty_Dimen"
                 />
 
             <LinearLayout
@@ -153,7 +167,7 @@
                     android:paddingEnd="@dimen/ten_Dimen"
                     android:drawablePadding="@dimen/ten_Dimen"
                     app:drawableStartCompat="@drawable/ic_comment_icon"
-                    android:layout_weight="2"/>
+                    android:layout_weight="1.5"/>
 
 
 
@@ -176,6 +190,7 @@
                     android:layout_marginBottom="@dimen/three_Dimen"
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
+                    android:background="@drawable/rounded_btn"
                     android:drawableStart="@drawable/ic_like_icon"
 
                     />
@@ -185,12 +200,14 @@
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:text="@string/liketxt"
+                    android:textColor="@color/white"
                     android:layout_marginTop="@dimen/three_Dimen"
                     android:layout_marginBottom="@dimen/three_Dimen"
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
                     android:drawableStart="@drawable/ic_liked_icon"
-
+                    android:drawableTint="@color/white"
+                    android:background="@drawable/rounded_btn_main"
                     />
 
                 <Button
@@ -204,15 +221,12 @@
                     android:layout_marginStart="@dimen/ten_Dimen"
                     android:layout_marginEnd="@dimen/ten_Dimen"
                     android:drawableStart="@drawable/ic_comment_2"
-
+                    android:background="@drawable/rounded_btn"
                     />
 
 
 
             </LinearLayout>
-
-
-
 
 
 
@@ -223,11 +237,12 @@
         <Button
             android:id="@+id/read_comments"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/twenty_Dimen"
+            android:layout_height="@dimen/thirty_Dimen"
+            android:paddingStart="@dimen/fifteen_Dimen"
+            android:paddingEnd="@dimen/zero_Dimen"
             android:text="@string/read_all_comments_txt"
             android:textColor="@color/black"
             android:drawableStart="@drawable/ic_comment_2"
-            android:drawablePadding="@dimen/ten_Dimen"
             android:layout_marginTop="@dimen/two_Dimen"
             android:layout_marginBottom="@dimen/ten_Dimen"
             android:background="#216FFF"
@@ -265,14 +280,14 @@
         <Button
             android:id="@+id/commentPostId"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginStart="@dimen/five_Dimen"
             android:layout_marginTop="@dimen/three_Dimen"
             android:layout_marginEnd="@dimen/two_Dimen"
             android:layout_marginBottom="@dimen/three_Dimen"
             android:layout_weight="4"
             android:text="@string/commenttxt"
-            android:textSize="@dimen/fifteen_SP_Dimen" />
+            />
 
     </LinearLayout>
 
